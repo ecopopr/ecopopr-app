@@ -1,0 +1,202 @@
+<p align="center"><span style="font-family: Calibri, sans-serif;"><span style="font-size: large;"><strong>Predador x Presa (Modelo de Lotka-Volterra)</strong></span></span></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><strong>Introdu&ccedil;&atilde;o</strong></span></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> O modelo representa a intera&ccedil;&atilde;o entre duas esp&eacute;cies em uma rela&ccedil;&atilde;o de preda&ccedil;&atilde;o. H&aacute; uma popula&ccedil;&atilde;o de presas, tamb&eacute;m chamadas v&iacute;timas, em crescimento que seria exponencial se n&atilde;o limitado pela presen&ccedil;a de uma popula&ccedil;&atilde;o de predadores, que constantemente remove presas de sua popula&ccedil;&atilde;o. Os predadores s&atilde;o limitados por um &uacute;nico recurso, a abund&acirc;ncia de v&iacute;timas, que afeta diretamente sua taxa de crescimento. A depend&ecirc;ncia do predador de cada v&iacute;tima individual depende da taxa de convers&atilde;o, sua capacidade de transformar a energia da v&iacute;tima em novos predadores. </span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> As duas popula&ccedil;&otilde;es se encontram em um ciclo de crescimento e queda, com os picos da popula&ccedil;&atilde;o de predadores ocorrendo um pouco depois dos picos da popula&ccedil;&atilde;o de presas, das quais dependem. O aumento da popula&ccedil;&atilde;o de presas faz a popula&ccedil;&atilde;o de predadores disparar logo depois. Esse disparo ent&atilde;o causa grande mortalidade de presas. Com pouca disponibilidade de presas, os predadores sofrem grande queda na popula&ccedil;&atilde;o, que ent&atilde;o possibilita a popula&ccedil;&atilde;o de presas crescer novamente.</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> No ambiente, as duas popula&ccedil;&otilde;es afetam n&atilde;o s&oacute; os n&uacute;meros das outras diretamente, como indiretamente. Por exemplo, um n&uacute;mero alto de predadores n&atilde;o apenas retira muitas v&iacute;timas de sua popula&ccedil;&atilde;o, mas tamb&eacute;m pode limitar a reprodu&ccedil;&atilde;o de cada indiv&iacute;duo por aumento do n&iacute;vel de estresse. O risco de preda&ccedil;&atilde;o diminui o pr&oacute;prio comportamento de procurar parceiros e acasalar, diminuindo a pr&oacute;pria taxa de mortalidade <em>per capita</em>.</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> No modelo, as taxas de mortalidade e natalidade <em>per capita</em> da v&iacute;tima s&atilde;o consideradas contantes e seu resultado &eacute; representado pela vari&aacute;vel r (mantida constante em cada caso), assim como no modelo exponencial. A esta vari&aacute;vel &eacute; acrescentada a mortalidade adicional pela preda&ccedil;&atilde;o. Para os predadores, a mortalidade &eacute; representada pela vari&aacute;vel q (tamb&eacute;m constante) e a natalidade da popula&ccedil;&atilde;o &eacute; alterada atrav&eacute;s de seus encontros com presas e efici&ecirc;ncia de convers&atilde;o.</span></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><strong>Premissas</strong></span></p>
+<p align="justify">&nbsp;</p>
+<ul>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">A popula&ccedil;&atilde;o de presas (tamb&eacute;m chamadas de v&iacute;timas) teria crescimento exponencial na aus&ecirc;ncia do predador. N&atilde;o h&aacute; outras limita&ccedil;&otilde;es para seu crescimento nem capacidade de suporte neste modelo.</span></p>
+</li>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">O predador &eacute; especialista, consumindo esta &uacute;nica popula&ccedil;&atilde;o de presas. A popula&ccedil;&atilde;o de predadores depende exclusivamente da popula&ccedil;&atilde;o de presas para sobreviv&ecirc;ncia.</span></p>
+</li>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">N&atilde;o h&aacute; limite para o consumo de v&iacute;timas por cada predador. N&atilde;o h&aacute; fatores como saciedade e predadores n&atilde;o interagem entre si no contexto da preda&ccedil;&atilde;o.</span></p>
+</li>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">Os encontros entre predadores e v&iacute;timas ocorrem ao acaso segundo uma probabilidade constante.</span></p>
+</li>
+</ul>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><strong>Defini&ccedil;&atilde;o matem&aacute;tica</strong></span></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> <strong>Crescimento da popula&ccedil;&atilde;o de </strong><strong>presas (</strong><strong>v&iacute;timas</strong><strong>)</strong></span></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> Assim como no modelo de crescimento exponencial, em que a varia&ccedil;&atilde;o do tamanho da popula&ccedil;&atilde;o era denotado por dN/dt, aqui temos o crescimento populacional das v&iacute;timas como dV/dt. Ou seja, o quanto a popula&ccedil;&atilde;o de v&iacute;timas est&aacute; crescendo ou decrescendo em um intervalo muito pequeno de tempo.</span></p>
+<p align="center"><span style="font-family: Calibri, sans-serif;">dV/dt = rV &ndash; &alpha;VP</span></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> O termo rV &eacute; similar a rN e significa o quanto a popula&ccedil;&atilde;o cresceria na aus&ecirc;ncia de predadores. O termo sendo subtra&iacute;do &eacute; o impacto da presen&ccedil;a dos predadores no crescimento da popula&ccedil;&atilde;o de presas.</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> Lembre-se que r &eacute; a taxa de crescimento instant&acirc;nea, resultante das taxas de natalidade e mortalidade instant&acirc;neas (b&rsquo; e d&rsquo;), naturais da popula&ccedil;&atilde;o independente da presen&ccedil;a do predador. O predador se torna um fator de mortalidade extra, na forma do segundo termo. </span></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> r &rarr; taxa de crescimento intr&iacute;nseca, ou instant&acirc;nea, da popula&ccedil;&atilde;o de v&iacute;timas</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> &alpha; &rarr; efici&ecirc;ncia de captura dos predadores</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> V &rarr; tamanho da popula&ccedil;&atilde;o de v&iacute;timas</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> P &rarr; tamanho da popula&ccedil;&atilde;o de predadores</span></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> A efici&ecirc;ncia de captura &eacute; a chance de um predador que encontre uma v&iacute;tima consiga captur&aacute;-la e consumi-la. &Eacute; a medida do impacto que cada indiv&iacute;duo de predador adicional tem sobre a popula&ccedil;&atilde;o de presas.</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> Considerando encontros aleat&oacute;rios constantes no tempo, temos a qualquer momento V v&iacute;timas encontrando P predadores. E nesses VP encontros, temos a chance &alpha; de que ocorrer&aacute; a preda&ccedil;&atilde;o. Logo, o n&uacute;mero de v&iacute;timas predadas &eacute; &alpha;VP.</span></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">Exemplo:</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> V = 100</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> r = 0,2</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> P = 5</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> &alpha; = 0,03</span></p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> Em determinado ponto do tempo, a popula&ccedil;&atilde;o de v&iacute;timas seria acrescida de rV indiv&iacute;duos:</span></p>
+<p align="center">&nbsp;</p>
+<p align="center"><span style="font-family: Calibri, sans-serif;">rV = 0,2 * 100 = 20</span></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> No entanto, temos presentes 50 predadores. Nesse mesmo intervalo curto de tempo, ocorrer&atilde;o VP encontros entre predadores e v&iacute;timas:</span></p>
+<p align="justify">&nbsp;</p>
+<p align="center"><span style="font-family: Calibri, sans-serif;">VP = 100 * 5</span></p>
+<p align="center"><span style="font-family: Calibri, sans-serif;">VP = 500</span></p>
+<p align="center">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> Como a efici&ecirc;ncia de captura do predador &eacute; 0,03, 3 a cada 100 ou 30% dos encontros resultar&atilde;o em preda&ccedil;&atilde;o e morte da v&iacute;tima:</span></p>
+<p align="justify">&nbsp;</p>
+<p align="center"><span style="font-family: Calibri, sans-serif;">&alpha;VP = 0,03 * 500</span></p>
+<p align="center">&nbsp;</p>
+<p align="center"><span style="font-family: Calibri, sans-serif;">&alpha;VP = 15</span></p>
+<p align="center">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> Consequentemente, neste tempo, a popula&ccedil;&atilde;o de v&iacute;timas ganhou 20 indiv&iacute;duos por reprodu&ccedil;&atilde;o mas perdeu 15 indiv&iacute;duos por preda&ccedil;&atilde;o.</span></p>
+<p align="center">&nbsp;</p>
+<p align="center"><span style="font-family: Calibri, sans-serif;">dV/dt = 20 &ndash; 15</span></p>
+<p align="center"><span style="font-family: Calibri, sans-serif;">dV/dt = 5</span></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> Isso significa que nesse ponto, a popula&ccedil;&atilde;o de v&iacute;timas est&aacute; crescendo, mas menos do que estaria na aus&ecirc;ncia do predador (aumentou em 5 indiv&iacute;duos ao inv&eacute;s de 20).</span></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><strong>Crescimento da popula&ccedil;&atilde;o de predadores</strong></span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> O crescimento da popula&ccedil;&atilde;o de predadores &eacute; denotado por dP/dt.</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> Neste modelo, o crescimento da popula&ccedil;&atilde;o de predadores depende exclusivamente da captura de presas e da taxa de mortalidade do predador. &Eacute; como se a popula&ccedil;&atilde;o tivesse suas taxas instant&acirc;neas de natalidade (b&rsquo;) e mortalidade (d&rsquo;) que resultam na taxa r no modelo exponencial, mas a de natalidade &eacute; diretamente dependente da popula&ccedil;&atilde;o de v&iacute;timas (presas) e a de mortalidade &eacute; colocada em um termo separado e representada pela letra q. [Isso faz sentido?]</span></p>
+<p align="justify">&nbsp;</p>
+<p align="center"><span style="font-family: Calibri, sans-serif;">dP/dt = &beta;VP &ndash; qP</span></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> &beta;&rarr; efici&ecirc;ncia de convers&atilde;o de v&iacute;timas em novos predadores</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> q&rarr; taxa de mortalidade da popula&ccedil;&atilde;o de predadores</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> V&rarr; tamanho da popula&ccedil;&atilde;o de v&iacute;timas</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> P &rarr; tamanho da popula&ccedil;&atilde;o de predadores</span></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> A <strong>efici&ecirc;ncia de convers&atilde;o</strong> &eacute; o quanto cada encontro entre v&iacute;tima e predador contribui para o crescimento da popula&ccedil;&atilde;o de predadores. Nela est&aacute; inclusa n&atilde;o s&oacute; a efici&ecirc;ncia de captura, mas a transforma&ccedil;&atilde;o de cada presa capturada em novos indiv&iacute;duos da popula&ccedil;&atilde;o de predadores.</span></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> Exemplo:</span></p>
+<p align="left"><span style="font-family: Calibri, sans-serif;"> V = 100</span></p>
+<p align="left"><span style="font-family: Calibri, sans-serif;"> q = 0,1</span></p>
+<p align="left"><span style="font-family: Calibri, sans-serif;"> P = 50</span></p>
+<p align="left"><span style="font-family: Calibri, sans-serif;"> &beta; = 0,01</span></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> Em determinado momento, a captura de presas adiciona predadores &agrave; popula&ccedil;&atilde;o por:</span></p>
+<p align="justify">&nbsp;</p>
+<p align="center"><span style="font-family: Calibri, sans-serif;">&beta;VP = 0,01 * 100 * 50</span></p>
+<p align="center"><span style="font-family: Calibri, sans-serif;">&beta;VP = 0,01 * 500</span></p>
+<p align="center"><span style="font-family: Calibri, sans-serif;">&beta;VP = 5</span></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> Ou seja: a cada 500 encontros predador x v&iacute;tima (que ocorrem simultaneamente em determinado ponto do tempo), s&atilde;o adicionados 5 indiv&iacute;duos &agrave; popula&ccedil;&atilde;o de predadores (resultantes da captura e da transforma&ccedil;&atilde;o dessa captura em novos predadores por reprodu&ccedil;&atilde;o).</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> No entanto, os predadores morrem a uma taxa de mortalidade <em>per capita</em> fixa q:</span></p>
+<p align="justify">&nbsp;</p>
+<p align="center"><span style="font-family: Calibri, sans-serif;">qP = 0,1 * 50</span></p>
+<p align="center"><span style="font-family: Calibri, sans-serif;">qP = 5</span></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> Nesse curto intervalo de tempo, a popula&ccedil;&atilde;o de predadores ganharia 5 indiv&iacute;duos pela preda&ccedil;&atilde;o (&beta;VP = 5) e perderia 5 indiv&iacute;duos por sua taxa de mortalidade (qP = 5). Consequentemente, a popula&ccedil;&atilde;o de predadores n&atilde;o cresceria neste momento.</span></p>
+<p align="justify">&nbsp;</p>
+<p align="center"><span style="font-family: Calibri, sans-serif;">dP/dt = 0</span></p>
+<p align="center">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><strong>Espa&ccedil;o de fase</strong></span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> O espa&ccedil;o de fase &eacute; um tipo de gr&aacute;fico que representa todos os poss&iacute;veis estados de um sistema din&acirc;mico. Aqui, o sistema em quest&atilde;o &eacute; a intera&ccedil;&atilde;o entre a popula&ccedil;&atilde;o de predadores e a de v&iacute;timas e o gr&aacute;fico mostra as poss&iacute;veis combina&ccedil;&otilde;es do tamanho de ambas as popula&ccedil;&otilde;es.</span></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> Cada ponto no espa&ccedil;o de fase &eacute; uma poss&iacute;vel combina&ccedil;&atilde;o do tamanho da popula&ccedil;&atilde;o de predadores (P) e de presas (V). Os <span style="color: #c9211e;"><strong>predadores</strong></span> s&atilde;o representados no <span style="color: #c9211e;"><strong>eixo y</strong></span> pois seu n&uacute;mero flutua em fun&ccedil;&atilde;o do n&uacute;mero de <span style="color: #3465a4;"><strong>presas (eixo x) </strong></span><span style="color: #000000;"><strong>[n&atilde;o sei se a conven&ccedil;&atilde;o dos eixos &eacute; por causa disso, mas parece fazer sentido]</strong></span>. A popula&ccedil;&atilde;o de presas sofre diminui&ccedil;&atilde;o com o aumento do n&uacute;mero de predadores, mas existiria (em crescimento exponencial) na aus&ecirc;ncia deles.</span></p>
+<p style="text-align: center;" align="justify"><span style="font-family: Calibri, sans-serif;"><img src="predacao1.png" alt="" /></span></p>
+<p style="text-align: center;" align="justify"><span style="font-family: Calibri, sans-serif;">Imagem espa&ccedil;o de fase</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">O gr&aacute;fico abaixo representa os mesmos valores (tamanho da popula&ccedil;&atilde;o de predadores e de presas) do espa&ccedil;o de fase acima, mas em fun&ccedil;&atilde;o do tempo. </span></p>
+<p style="text-align: center;" align="justify"><span style="font-family: Calibri, sans-serif;"><img src="predacao2.png" alt="" /></span></p>
+<p style="text-align: center;" align="justify"><span style="font-family: Calibri, sans-serif;">Imagem Nt x tempo</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">Repare que a popula&ccedil;&atilde;o de <span style="color: #3465a4;"><strong>presas (v&iacute;timas)</strong></span> atinge seus picos (em amarelo na imgem abaixo) e vales (em preto) populacionais antes da popula&ccedil;&atilde;o de <span style="color: #c9211e;"><strong>predadores</strong></span>. Isso ocorre pois, com o aumento do n&uacute;mero de presas, a popula&ccedil;&atilde;o de predadores ainda demora algum tempo at&eacute; que o ganho de indiv&iacute;duos por preda&ccedil;&atilde;o volte a superar a taxa de mortalidade. O mesmo ocorre com a queda no n&uacute;mero de v&iacute;timas, pois demora um pouco at&eacute; que a taxa mortalidade do predador volte a superar sua natalidade em decl&iacute;nio (causada por menos encontros com v&iacute;timas).</span></p>
+<p style="text-align: center;" align="justify"><img src="predacao3.png" alt="" /></p>
+<p style="text-align: center;" align="justify"><span style="font-family: Calibri, sans-serif;">Imagem ciclo marcado</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><strong>Isoclinas (ou isolinhas)</strong></span></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> As isoclinas (ou isolinhas) s&atilde;o linhas no gr&aacute;fico de espa&ccedil;o de fase que determinam a abund&acirc;ncia das popula&ccedil;&otilde;es de predadores e presas em que o crescimento de cada esp&eacute;cie &eacute; igual a 0.</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> Como no modelo de competi&ccedil;&atilde;o, temos duas isoclinas. No entanto, no modelo de Lotka-Volterra para preda&ccedil;&atilde;o, &eacute; um n&uacute;mero <strong>constante</strong> de indiv&iacute;duos da outra esp&eacute;cie que mant&eacute;m a esp&eacute;cie com crescimento dN/dt = 0 e as isoclinas de cada esp&eacute;cie s&atilde;o paralelas a seus eixos.</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> Ou seja: </span></p>
+<ul>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">A <span style="color: #3465a4;"><strong>isoclina das presas</strong></span> se refere a um <strong>n&uacute;mero fixo de predadores</strong> que as manteria com crescimento dV/dt = 0, <strong>independente do n&uacute;mero de presas</strong>.</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">Corta o eixo y (dos predadores) e &eacute; paralela ao eixo x (das presas).</span></p>
+<p align="justify">&nbsp;</p>
+</li>
+<li style="text-align: center;">
+<p align="justify"><span style="font-family: Calibri, sans-serif;">A <span style="color: #c9211e;"><strong>isoclina dos predadores</strong></span> se refere a um <strong>n&uacute;mero fixo de presas</strong> que os manteria com crescimento dP/dt = 0, <strong>independente do n&uacute;mero de predadores</strong>.</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">Corta o eixo x (das presas) e &eacute; paralela ao eixo y (dos predadores).</span></p>
+<span style="font-family: Calibri, sans-serif;"><img src="predacao4.png" alt="" /></span></li>
+</ul>
+<p style="text-align: center;"><span style="font-family: Calibri, sans-serif;">Imagem espa&ccedil;o de fase</span></p>
+<p align="justify"><strong>Em n&uacute;meros:</strong></p>
+<p align="justify"><span style="color: #c9211e;"><strong>Isoclina dos predadores</strong></span></p>
+<ul>
+<li>
+<p align="justify">Corta o <strong>eixo x</strong> em <strong>q/</strong><span style="font-family: Liberation Serif, serif;"><strong>&beta;</strong></span> <span style="font-family: Liberation Serif, serif;"> (</span><span style="font-family: Liberation Serif, serif;">taxa de </span><span style="font-family: Liberation Serif, serif;">mortalidade </span><span style="font-family: Liberation Serif, serif;">do predador</span><span style="font-family: Liberation Serif, serif;"> / efici&ecirc;ncia de convers&atilde;o)</span></p>
+</li>
+<li>
+<p align="justify"><span style="font-family: Liberation Serif, serif;">No exemplo do gr&aacute;fico: </span><span style="font-family: Liberation Serif, serif;">q = 0,5; </span><span style="font-family: Liberation Serif, serif;">&beta;</span><span style="font-family: Liberation Serif, serif;"> = 0,001</span></p>
+</li>
+</ul>
+<p align="justify"><span style="font-family: Liberation Serif, serif;">No exemplo acima, a</span><span style="font-family: Liberation Serif, serif;"> isoclina dos predadores </span><span style="color: #c9211e;"><span style="font-family: Liberation Serif, serif;"><strong>corta</strong></span></span><span style="color: #c9211e;"><span style="font-family: Liberation Serif, serif;"><strong> o eixo x</strong></span></span><span style="font-family: Liberation Serif, serif;"> em V = 500.</span></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="color: #3465a4;"><span style="font-family: Liberation Serif, serif;"><strong>Isoclina das </strong></span></span><span style="color: #3465a4;"><span style="font-family: Liberation Serif, serif;"><strong>presas / v&iacute;timas</strong></span></span></p>
+<ul>
+<li>
+<p align="justify"><span style="font-family: Liberation Serif, serif;">Corta o eixo y em</span> <span style="font-family: Liberation Serif, serif;"><strong>r / </strong></span><span style="font-family: Liberation Serif, serif;"><strong>&alpha;</strong></span><span style="font-family: Liberation Serif, serif;"> (taxa de crescimento intr&iacute;nseco </span><span style="font-family: Liberation Serif, serif;">da presa</span><span style="font-family: Liberation Serif, serif;"> / efici&ecirc;ncia de captura)</span></p>
+</li>
+<li>
+<p align="justify"><span style="font-family: Liberation Serif, serif;">No exemplo do gr&aacute;fico: </span><span style="font-family: Liberation Serif, serif;">r = 0,1; &alpha; = 0,001</span></p>
+</li>
+</ul>
+<p align="justify"><span style="font-family: Liberation Serif, serif;"> No exemplo acima, a isoclina das presas <span style="color: #3465a4;"><strong>c</strong></span><span style="color: #3465a4;"><strong>orta o eixo y</strong></span> em P = 100.</span></p>
+<p align="justify">&nbsp;</p>
+<p align="justify">&nbsp;</p>
+<p align="justify">O <strong>cruzamento das isoclinas</strong> &eacute; um ponto em que ambas as taxas de crescimento s&atilde;o igual a 0.</p>
+<p align="justify">&nbsp;</p>
+<p align="center"><strong>dV/dt = 0</strong> e <strong>dP/dt = 0</strong></p>
+<p align="justify">&nbsp;</p>
+<p align="justify">A combina&ccedil;&atilde;o dos valores de V e P oscila ao redor desse ponto (sem entrar em equil&iacute;brio), em sentido <strong>anti-hor&aacute;rio</strong>, de acordo com a posi&ccedil;&atilde;o relativa em rela&ccedil;&atilde;o &agrave;s isoclinas.</p>
+<p align="justify">A popula&ccedil;&atilde;o de presas cresce ou diminui de acordo com o n&uacute;mero de predadores e vice-versa.</p>
+<p style="text-align: center;" align="justify"><img src="predacao5.png" alt="" /></p>
+<p style="text-align: center;" align="justify">Imagem espa&ccedil;o de fase com vetores e setas</p>
+<p align="justify"><span style="color: #c9211e;"><strong>I</strong></span><span style="color: #c9211e;"><strong>soclina dos predadores</strong></span>, que corta o eixo x no valor de V que mant&eacute;m a popula&ccedil;&atilde;o de predadores est&aacute;vel. &Agrave; direita (quando h&aacute; mais presas), P aumenta. &Agrave; esquerda (quando h&aacute; poucas presas), P diminui.</p>
+<p align="justify"><span style="color: #3465a4;"><strong>I</strong></span><span style="color: #3465a4;"><strong>soclina das presas</strong></span>, que corta o eixo y no valor de P que mant&eacute;m a popula&ccedil;&atilde;o de presas est&aacute;vel. Abaixo (quando h&aacute; poucos predadores), V aumenta. Acima (quando os predadores s&atilde;o muitos), V diminui.</p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><strong>Quadrante 1: </strong></p>
+<p align="justify">&Agrave; direita da isoclina dos <span style="color: #c9211e;"><strong>predadores</strong></span> (um valor de V), existem presas o suficiente para manter o crescimento maior que 0 e a popula&ccedil;&atilde;o de predadores <strong>aumenta</strong>.</p>
+<p align="justify">Acima da isoclina das <span style="color: #3465a4;"><strong>presas</strong></span> (um valor de P), existem predadores excessivos que fazem a popula&ccedil;&atilde;o de presas <strong>diminuir</strong>.</p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><strong>Quadrante 2:</strong></p>
+<p align="justify">&Agrave; esquerda da isoclina dos <span style="color: #c9211e;"><strong>predadores</strong></span> (um valor de V), n&atilde;o h&aacute; presas o suficiente para o crescimento da popula&ccedil;&atilde;o de predadores e ela <strong>decresce</strong>.</p>
+<p align="justify">Acimada isoclina das <span style="color: #3465a4;"><strong>presas</strong></span> (um valor de P), o n&uacute;mero de predadores &eacute; baixo o suficiente para a popula&ccedil;&atilde;o de presas <strong>crescer</strong>.</p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><strong>Quadrante 3:</strong></p>
+<p align="justify">&Agrave; esquerda da isoclina dos <span style="color: #c9211e;"><strong>predadores</strong></span> (um valor de V), n&atilde;o h&aacute; presas o suficiente para o crescimento da popula&ccedil;&atilde;o de predadores e ela <strong>decresce</strong>.</p>
+<p align="justify"><span style="color: #000000;">Abaixo </span><span style="color: #000000;">da isoclina das </span><strong><span style="color: #3465a4;">presas</span></strong><span style="color: #000000;"> (um valor de P), </span><span style="color: #000000;">o n&uacute;mero de predadores &eacute; baixo o suficiente para a popula&ccedil;&atilde;o de presas </span><strong><span style="color: #000000;">crescer</span></strong><span style="color: #000000;">.</span></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><strong>Quadrante </strong><strong>4</strong><strong>:</strong></p>
+<p align="justify">&Agrave; direita da isoclina dos <span style="color: #c9211e;"><strong>predadores </strong></span><span style="color: #000000;">(um valor de V), existem </span><span style="color: #000000;">presas</span><span style="color: #000000;"> o suficiente para manter o crescimento maior que 0 e a popula&ccedil;&atilde;o </span><span style="color: #000000;">de predadores </span><span style="color: #000000;"><strong>aumenta</strong></span><span style="color: #000000;">.</span></p>
+<p align="justify"><span style="color: #000000;">Abaixo </span><span style="color: #000000;">da isoclina das </span><strong><span style="color: #3465a4;">presas</span></strong><span style="color: #000000;"> (um valor de P), </span><span style="color: #000000;">o n&uacute;mero de predadores &eacute; baixo o suficiente para a popula&ccedil;&atilde;o de presas </span><strong><span style="color: #000000;">crescer</span></strong><span style="color: #000000;">.</span></p>
+<p align="justify"><strong>Exerc&iacute;cio</strong></p>
+<p align="justify">Dados iniciais:</p>
+<p align="left">P0 = 300</p>
+<p align="left">V0 = 900</p>
+<p align="left">r = 0,3</p>
+<p align="left">c ou <span style="font-family: Liberation Serif, serif;">&alpha;</span> = 0,001 (efici&ecirc;ncia de captura)</p>
+<p align="left">a ou <span style="font-family: Liberation Serif, serif;">&beta;</span> = 0,001 (efici&ecirc;ncia de convers&atilde;o)</p>
+<p align="left">m ou q = 0,6 (taxa de mortalidade do predador)</p>
+<p align="left">t = 100</p>
+<p align="left">&nbsp;</p>
+<p align="justify"><strong>a) </strong>Reduza a taxa de crescimento intr&iacute;nseco das v&iacute;timas para 0,1. O que acontece com a popula&ccedil;&atilde;o de v&iacute;timas e a de predadores, em rela&ccedil;&atilde;o a seus n&uacute;meros m&iacute;nimos e m&aacute;ximos e o tempo dos ciclos?</p>
+<p align="justify"><strong>b) </strong>Agora mude para r = 0,01 e t = 300. O que acontece com as popula&ccedil;&otilde;es, em rela&ccedil;&atilde;o a seus valores m&iacute;nimos? O que teria acontecido de diferente na natureza e como isso &eacute; diferente do modelo?</p>
+<p align="justify"><strong>c</strong><strong>)</strong> O que voc&ecirc; espera que aconteceria com a popula&ccedil;&atilde;o de predadores, na vida real, caso fatores antr&oacute;picos como ca&ccedil;a e destrui&ccedil;&atilde;o de habitat diminu&iacute;sse a taxa de crescimento intr&iacute;nseco das v&iacute;timas? Se for um mesopredador, o que mais poderia acontecer no ecossistema?</p>
+<p align="justify">&nbsp;</p>

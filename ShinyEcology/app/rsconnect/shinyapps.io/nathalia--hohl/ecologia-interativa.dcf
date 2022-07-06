@@ -1,0 +1,13 @@
+name: ecologia-interativa
+title:
+username:
+account: nathalia--hohl
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3458603
+bundleId: 5379957
+url: https://nathalia--hohl.shinyapps.io/ecologia-interativa/
+when: 1639657606.6867
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: .RData

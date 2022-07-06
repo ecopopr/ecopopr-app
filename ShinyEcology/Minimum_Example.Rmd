@@ -1,0 +1,114 @@
+---
+title: "Ecologia Numérica"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    theme: yeti
+  runtime: shiny
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(shiny)
+library(dplyr)
+library(deSolve)
+library(plotly)
+thematic::thematic_rmd() 
+
+```
+
+# My plot, rendered with ggplot2
+
+##  {.sidebar data-width="200"}
+
+```{r}
+
+sliderInput("N0GeoIn", "N0",min = 1, max = 100, value = 5)
+numericInput("RGeoIn", "R",value = .5) 
+sliderInput("tGeoIn", "t",min = 0, max = 100, value = 10)
+renderText({
+    
+    Nt <- tail(geoGdf()$n, n = 1)
+    paste0("N(t) = ", round(Nt))
+    
+  })
+
+```
+
+##  {.tabset .tabset-fade data-width="450"}
+
+### Crescimento geométrico - Resultado
+
+```{r}
+
+geoGdf <- reactive({ 
+    
+    N0 <- input$N0GeoIn
+    R <- input$RGeoIn
+    t <- seq(0, input$tGeoIn, by = 1) 
+    
+    n <- N0 * (1 + R) ^ t
+    
+    df <- data.frame(t,n)
+  })
+
+
+  renderPlot(ggplot(geoGdf(), aes(x = t, y = n)) +
+    geom_point(colour='lightsteelblue4', size = 3) +
+    geom_line(linetype = "dashed") +
+    ggtitle("Crescimento Geométrico (Em Passos)") +
+    xlab("t") +
+    ylab("N(t)") +
+    theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+          panel.background = element_blank(),
+          axis.line = element_line(colour = "black")) +
+    theme(plot.title = element_text(size = 24, hjust = 0.5, face = "bold"),
+          axis.title = element_text(size = 20, face = "bold"),
+          axis.text = element_text(size = 16, face = "bold")
+    )
+)
+
+```
+
+### Exemplos
+
+Lorem ipsum dolor sit amet
+
+### Exercícios
+
+Lorem ipsum dolor sit amet
+
+
+##  {data-width="400"}
+
+### **Entendendo o modelo**
+
+Lorem ipsum dolor sit amet
+
+
+
+
+```{r}
+
+
+
+```
+
+# Isis example, rendered with plotly
+
+##  {.sidebar data-width="200"}
+
+```{r}
+
+
+
+```
+
+##  {.tabset .tabset-fade data-width="450"}
+
+### Isis plot
+
+```{r}
+renderPlotly(plot_ly(iris))
+```

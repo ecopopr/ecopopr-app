@@ -1,0 +1,523 @@
+---
+title: "Ecologia Numérica"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    theme: yeti
+  runtime: shiny
+---
+
+```{r include=FALSE}
+#NOTA:
+# theme pode ser qualquer coisa a seguir:
+#"default", "cerulean", "journal", "flatly", "darkly", "readable", "spacelab", "united", #"cosmo", "lumen", "paper", "sandstone", "simplex", "yeti"
+# Eu gostei de skylab,
+
+#Outros exemplos em:
+#https://bootswatch.com/
+```
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(shiny)
+library(dplyr)
+library(deSolve)
+library(plotly)
+thematic::thematic_rmd() 
+
+knitr::opts_chunk$set(fig.width= 10, fig.height=10)
+```
+
+<!-- # TESTE PLOTLY -->
+
+<!-- ##  {.sidebar data-width="200"} -->
+
+<!-- ```{r} -->
+
+
+
+<!-- ``` -->
+
+<!-- ##  {.tabset .tabset-fade data-width="450"} -->
+
+<!-- ### TESTE PLOTLY RESULTADO -->
+
+<!-- # ```{r} -->
+<!-- #  -->
+<!-- # renderPlotly(plot_ly(iris) -->
+<!-- # ) -->
+<!-- # ``` -->
+
+# Crescimento geométrico
+
+##  {.sidebar data-width="200"}
+
+```{r}
+
+sliderInput("N0GeoIn", "N0",min = 1, max = 100, value = 5)
+numericInput("RGeoIn", "R",value = .5) 
+sliderInput("tGeoIn", "t",min = 0, max = 100, value = 10)
+renderText({
+    
+    Nt <- tail(geoGdf()$n, n = 1)
+    paste0("N(t) = ", round(Nt))
+    
+  })
+
+#selectInput(inputId="categorical_variable", label = "Select #Categorical Variable:", choices = Categorical.Variables, #selected = Categorical.Variables[1])
+
+#selectInput(inputId="numeric_variable", label = "Select #Numeric Variable:", choices = Numeric.Variables, selected = #Numeric.Variables[1])
+
+```
+
+##  {.tabset .tabset-fade data-width="450"}
+
+### Crescimento geométrico - Resultado
+
+```{r}
+
+geoGdf <- reactive({ # função reativa em que o modelo é implementado
+    
+    N0 <- input$N0GeoIn # variáveis determinadas pelo input do usuário
+    R <- input$RGeoIn
+    t <- seq(0, input$tGeoIn, by = 1) 
+    
+    n <- N0 * (1 + R) ^ t # implementação do modelo
+    
+    df <- data.frame(t,n) # data frame que será utilizado para gerar o gráfico
+  })
+
+
+rmarkdown::render_delayed(
+  renderPlot(width = 300, height = 300,
+  ggplot(geoGdf(), aes(x = t, y = n)) + # função que utiliza o resultado da
+    #função reativa para gerar o gráfico
+    geom_point(colour='lightsteelblue4', size = 3) + # início dos parâmetros
+    #estéticos do gráfico
+    geom_line(linetype = "dashed") +
+    ggtitle("Crescimento Geométrico (Em Passos)") +
+    xlab("t") +
+    ylab("N(t)") +
+    theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+          panel.background = element_blank(),
+          axis.line = element_line(colour = "black")) +
+    theme(plot.title = element_text(size = 24, hjust = 0.5, face = "bold"),
+          axis.title = element_text(size = 20, face = "bold"),
+          axis.text = element_text(size = 16, face = "bold")
+    )
+)
+
+)
+```
+
+### Exemplos
+
+A cada passo de tempo nasce 1 indivíduo a cada indivíduo na população e morre 0,5 indivíduo a cada indivíduo na população.
+
+B = 1 e D = 0,5
+
+R = 0,5 -\> quantos indivíduos serão acrescidos à população por cada cada indivíduo já existente a cada passo de tempo
+
+Se temos 10 indivíduos, cada um deles gerará 0,5 indivíduo, considerando o que cada um gerará por reprodução (B) e descontando quantos morrerão per capita (D).
+
+No próximo passo de tempo teremos a adição de 5 indivíduos e o tamanho da população passará a ser N = 15.
+
+R = 0,5 significa que a população cresce 50% a cada passo e para obter esse valor precisamos multiplicar o N por 1,5.
+
+Esse novo valor (1 + R) pode ser multiplicado ao número de indivíduos para saber quantos existirão no próximo passo de tempo.
+
+Nt+1 = Nt (1+R)
+
+Chamamos (1+R) de λ (lambda) e temos que:
+
+Nt+1 = Nt \* λ
+
+Como as taxas de natalidade e mortalidade per capita (B e D) permanecem constantes, R (taxa de crescimento finita) também permanece.
+
+Então para cada passo no tempo, basta multiplicar a população por lambda (1+R) novamente.
+
+Nt = N0 λt
+
+No nosso exemplo, para 3 passos de tempo, teríamos:
+
+N3 = 10 \* 1,5 \* 1,5 \* 1,5 = 33,75
+
+ou
+
+N3 = 10 \* 1,53 = 33,75
+
+### Exercícios
+
+Mantenha os valores R = 0.2 e t = 10. Mude N0 para os seguintes valores e anote, para cada um, o tamanho que a população alcança após 10 passos de tempo:
+
+N0 = 5
+
+N0 = 10
+
+N0 = 20
+
+N0 = 40
+
+O que você observa? Por que isso acontece?
+
+2)  Retorne para N0 = 5. Ande de t = 10 para t = 11. Qual é a relação entre os valores de Nt nesses dois passos de tempo?
+
+
+##  {data-width="400"}
+
+### **Entendendo o modelo**
+
+**Parâmetros do modelo**
+
+**B**: taxa de natalidade discreta per capita (a cada 1 indivíduo, quantos nascem a cada passo de tempo) D = taxa de mortalidade discreta per capita (a cada 1 indivíduo, quantos morrem a cada passo de tempo)
+
+$B-D = R$
+
+**R:** taxa de crescimento finita ou discreta
+
+**Premissas:**
+
+-   Não há recursos limitantes para o crescimento da população
+
+-   As taxas de natalidade e mortalidade não variam e consequentemente, R é constante
+
+-   Todos os indivíduos podem se reproduzir com todos os outros
+
+-   Todas as reproduções ocorrem em momentos específicos (discretos) do tempo (sejam dias, estações, anos etc) e ocorrem todas de uma vez a cada passo de tempo
+
+
+
+# Crescimento exponencial
+
+##  {.sidebar data-width="200"}
+
+```{r}
+
+sliderInput("N0ExpIn", "N0", min = 1, max = 100, value = 1)
+numericInput("rExpIn", "r", value = 0.1, step = 0.01)
+sliderInput("tExpIn", "t", min = 0, max = 100, value = 50)
+
+renderText({
+
+    Nt <- tail(expGdf()$Nt, n = 1)
+    paste0("N(t) = ", round(Nt))
+
+  })
+
+renderText(c("Tempo de duplicação =", round(log(2)/input$rExpIn , 2)))
+
+#selectInput(inputId="categorical_variable", label = "Select #Categorical Variable:", choices = Categorical.Variables, #selected = Categorical.Variables[1])
+
+#selectInput(inputId="numeric_variable", label = "Select #Numeric Variable:", choices = Numeric.Variables, selected = #Numeric.Variables[1])
+
+```
+
+##  {.tabset .tabset-fade data-width="450"}
+
+### Crescimento exponencial - Resultado
+
+```{r}
+
+#Implementação do Modelo
+
+expGdf <- reactive({
+    N0 <- input$N0ExpIn
+    r <- input$rExpIn
+    
+    t <- seq(0, input$tExpIn, by = 1)
+    Nt <- N0 * exp((r * t))
+    
+    
+    df <- data.frame(t, Nt)
+    
+
+})
+
+#Gráfico
+
+rmarkdown::render_delayed(
+  renderPlot(width = 300, height = 300,
+ggplot(expGdf(),aes(x = t, y = Nt)) +
+    geom_line(color = "lightsteelblue4") +
+    geom_point(colour='lightsteelblue4', size = 3) +
+    ggtitle("Crescimento Exponencial Contínuo") +
+    xlab("t") +
+    ylab("N(t)") +
+      theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+            panel.background = element_blank(),
+            axis.line = element_line(colour = "black")) +
+    theme(plot.title = element_text(size = 24, hjust = 0.5, face = "bold"),
+          axis.title = element_text(size = 20, face = "bold"),
+          axis.text = element_text(size = 16, face = "bold")
+    )
+    )
+)
+```
+
+
+# Crescimento logístico
+
+##  {.sidebar data-width="200"}
+
+```{r}
+  sliderInput("N0LogIn", "N0", min = 1, max = 100, value = 1)
+  numericInput("rLogIn", "r", min = -3, max = 3, value = 0.2, step = 0.01)
+  sliderInput("tLogIn", "t", min = 0, max = 100, value = 80)
+  sliderInput("kLogIn", "K", min = 0, max = 100, value = 50)
+  renderText({
+    
+    Nt <- tail(logGdf()$Nt, n = 1)
+    paste0("N(t) = ", round(Nt))
+    
+  })
+
+```
+
+##  {.tabset .tabset-fade data-width="450"}
+
+### Crescimento logístico - Resultado
+
+```{r}
+# Implementação do modelo logístico
+
+logGdf <- reactive({
+    
+    k <- input$kLogIn
+    N0 <- input$N0LogIn
+    r <- input$rLogIn
+    
+    t <- seq(0, input$tLogIn, by = 1)
+    Nt <- k / (1 + ((k - N0) / N0) * exp(-r * t))
+    
+    df <- data.frame(t, Nt)
+  })
+
+# Gráfico do modelo logístico
+rmarkdown::render_delayed(
+renderPlot(width = 300, height = 300,
+           ggplot(logGdf(),aes(x=t,y=Nt)) +
+      geom_point(colour='lightsteelblue4', size = 3) +
+      geom_hline(yintercept = input$kLogIn, linetype = "dashed") +
+      annotate("text", x = input$tLogIn, y = (input$kLogIn - input$kLogIn/20 ),
+               label = "K", size = 6) + # y moves K to improve legibility
+      ggtitle("Crescimento Logístico") +
+      xlab("t") +
+      ylab("N(t)") +
+      theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+            panel.background = element_blank(),
+            axis.line = element_line(colour = "black")) +
+      theme(plot.title = element_text(size = 24, hjust = 0.5, face = "bold"),
+            axis.title = element_text(size = 20, face = "bold"),
+            axis.text = element_text(size = 16, face = "bold")
+      )
+  )  
+
+)
+```
+
+# Predador x Presa
+
+## {.sidebar data-width="200"}
+
+```{r}
+numericInput("P0Pred", "População inicial de Predadores - P0 \n 
+                                           (milhares de indivíduos)",
+                   min = 0, max = 1000, value = 200, step = 0.1)
+
+numericInput("V0Pred", "População inicial de Vítimas - V0\n 
+                                                (milhares de indivíduos)",
+                                      min = 0, max = 1000, value = 600, step = 0.1)
+      
+numericInput("rPred", "Taxa de cresc. intríns. da vítima - r)",
+                   min = 0, max = 3, value = 0.1, step = 0.1)
+      
+numericInput("cPred", "Eficência de captura do predador (c ou alpha)",
+                   min = 0, max = 3, value = 0.001, step = 0.01)
+      
+numericInput("aPred", "Eficência de conversão do predador (a ou beta)",
+                   min = 0, max = 3, value = 0.001, step = 0.1)
+      
+numericInput("mPred", "Taxa de mortalidade do predador (m ou q)",
+                   min = 0, max = 3, value = 0.5, step = 0.1)
+      
+numericInput("tPred", "t (de 0 a 1000)", 
+                   min = 0, max = 1000, value = 100)
+
+renderText({
+    Vt <- tail(Pred.df()$X1, n = 1)
+    paste0("V(t) = ", round(Vt, digits = 3))
+  })
+renderText({
+    Pt <- tail(Pred.df()$X2, n = 1)
+    paste0("P(t) = ", round(Pt, digits = 3))
+  })     
+
+```
+
+
+##  {.tabset .tabset-fade data-width="450"}
+### Crescimento populacional Predador x Presa - Resultado
+
+```{r}
+  
+  Pred.df <- reactive({
+    
+    steps <- seq(0, input$tPred, by = 1) #used later as the "times" for ode function and to create the color columns through #repetition
+    
+    parms <- c(r = input$rPred, V = input$V0Pred, c = input$cPred,
+               m = input$mPred, P = input$P0Pred, a = input$aPred)
+    initialN <- c(input$V0Pred,input$P0Pred)
+    
+    # See comments on Competition for help.
+    lv.pred <- function(t, n, parms) {
+      with(as.list(parms), {
+        dV.dt <- r * n[1] - c * n[1] * n[2]
+    
+        
+        dP.dt <- a * n[1] * n[2] - m * n[2]
+        
+        list(c(dV.dt, dP.dt))
+      })
+    }
+    
+    # General Solver of Ordinary Differential Equations
+   # ode(y, times, func, parms, [...]) See Competition for more.
+    
+    out <- ode(y = initialN, times = steps, func = lv.pred, parms = parms)
+    
+    V = rep("V",length(steps)) #used in plot legend and colors
+    P = rep("P",length(steps))
+    
+    result <- data.frame(out, V, P) #V and P are used by the aes function to color 
+    #the lines.
+    
+  })
+
+rmarkdown::render_delayed(
+renderPlot(width = 300, height = 300,
+    ggplot(data = Pred.df()) +
+      geom_point(aes(x = time, y = X1, color = V), size = 2) +
+      geom_line(aes(x = time, y = X1, color = V), size = 0.5) +
+      geom_point(aes(x = time, y = X2, color = P), size = 2) +
+      geom_line(aes(x = time, y = X2, color = P), size = 0.5) +
+      ggtitle("Predador x Presa") +
+      xlab("t") +
+     ylab("Tamanho das Populações de P e V\n") +
+      theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+            panel.background = element_blank(),
+            axis.line = element_line(colour = "black")) +
+      theme(plot.title = element_text(size = 24, hjust = 0.5, face = "bold"),
+           axis.title = element_text(size = 20, face = "bold"),
+            axis.text = element_text(size = 16, face = "bold"),
+            legend.text = element_text(size = 16, face = "bold"),
+            legend.title = element_blank()
+            )
+  )
+
+)
+```
+
+
+
+### Solução do problema?
+
+##  {data-width="400"}
+
+### ISOFASES
+
+```{r}
+ #Cálculo das isolinhas
+
+ predIsodf <- reactive({
+    
+    m <- input$mPred
+    a <- input$aPred
+    c <- input$cPred
+    
+    r <- input$rPred
+    c <- input$cPred
+    
+    isoP <- r / c
+
+    isoV <- m / a
+    
+    df <- data.frame(isoV, isoP)
+    df
+  })
+
+
+ # Gráfico supostamente pronto para rodar - As vezes funciona as vezes não!
+ # Não entendo o pq!
+
+rmarkdown::render_delayed(
+ renderPlot(width = 300, height = 300,
+  ggplot() +
+   geom_vline(data = predIsodf(), aes(xintercept = isoV)) +
+      geom_hline(data = predIsodf(), aes(yintercept = isoP)) +
+      geom_point(data = Pred.df(), aes(x = X1, y = X2),
+                 color = c("lightsteelblue4"), alpha = 0.4, size = 3) +
+      geom_path(data = Pred.df(), aes(x = X1, y = X2),
+                color = "lightsteelblue4", alpha = 0.6) +
+      ggtitle("Espaço de Fase") +
+      xlab("Pop. de Presas (V)") +
+      ylab("Pop. de Predadores (P)") +
+      theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+            panel.background = element_blank(),
+            axis.line = element_line(colour = "black")) +
+      theme(plot.title = element_text(size = 24, hjust = 0.5, face = "bold"),
+            axis.title = element_text(size = 20, face = "bold"),
+            axis.text = element_text(size = 16, face = "bold"),
+            legend.text = element_text(size = 16, face = "bold"),
+            legend.title = element_blank()
+      )
+  )
+)
+```
+
+# Referências
+
+
+
+
+# Sobre
+
++:------------------------------------------------------------------------------------------------------------------------------+
+| ![Tip](images/tip.png) Table multiline text bla bla bla bla bla bla bla bla bla bla bla ... the blank line below is important |
++-------------------------------------------------------------------------------------------------------------------------------+
+
+### A ideia {data-height="1000"}
+
+::: {.warning style="padding:0.1em; background-color:#E9D8FD; color:#69337A"}
+<span>
+
+<p style="margin-top:1em; text-align:center">
+
+<b>On the importance of sentence length</b>
+
+</p>
+
+<p style="margin-left:1em;">
+
+This sentence has five words. Here are five more words. Five-word sentences are fine. But several together bocome monotonous. Listen to what is happening. The writing is getting boring. The sound of it drones. It's like a stuck record. The ear demands some variety.<br><br> Now listen. I vary the sentence length, and I create music. Music. The writing sings. It has a pleasent rhythm, a lilt, a harmony. I use short sentences. And I use sentences of medium length. And sometimes when I am certain the reader is rested, I will engage him with a sentence of considerable length, a sentence that burns with energy and builds with all the impetus of a crescendo, the roll of the drums, the crash of the cymbals -- sounds that say listen to this, it is important.
+
+</p>
+
+<p style="margin-bottom:1em; margin-right:1em; text-align:right; font-family:Georgia">
+
+<b>- Gary Provost</b> <i>(100 Ways to Improve Your Writing, 1985)</i>
+
+</p>
+
+</span>
+:::
+
+### Desenvolvedores {data-commentary-width="400"}
+
+
+
+Gabriel Santos <a href="http://lattes.cnpq.br/1714610835853424">lattes</a> <a href="https://ecosantos.netlify.app/">website</a>
+
+Nathalia Hohl <a href="http://lattes.cnpq.br/4836698360243899">lattes</a>
+
+### Quem apoia

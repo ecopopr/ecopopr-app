@@ -1,0 +1,298 @@
+<h2 style="text-align: center;">Competi&ccedil;&atilde;o Interespec&iacute;fica</h2>
+<h2 style="text-align: center;" align="center">Modelo de Competi&ccedil;&atilde;o de Lotka-Volterra</h2>
+<p align="center">&nbsp;</p>
+<p style="text-align: justify;" align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;"> Este modelo representa </span><span style="font-size: medium;">a</span><span style="font-size: medium;"> intera&ccedil;&atilde;o entre </span><span style="font-size: medium;">duas</span><span style="font-size: medium;"> popula&ccedil;&otilde;es de esp&eacute;cies diferentes que competem entre si por um recurso limitante. </span><span style="font-size: medium;">Cada esp&eacute;cie sozinha cresceria de acordo com o modelo log&iacute;stico, mas </span><span style="font-size: medium;">nesse caso </span><span style="font-size: medium;">sofre redu&ccedil;&atilde;o em seu crescimento de acordo com </span><span style="font-size: medium;">o n&uacute;mero</span><span style="font-size: medium;"> de indiv&iacute;duos da esp&eacute;cie competidora e o </span><span style="font-size: medium;">tamanho do </span><span style="font-size: medium;">efeito que a competidora tem sobre sua popula&ccedil;&atilde;o (coeficiente de competi&ccedil;&atilde;o).</span></span></p>
+<p style="text-align: center;" align="center"><img src="comp_eq1.png" alt="" /></p>
+<p style="text-align: center;" align="center">e</p>
+<p style="text-align: center;" align="center"><img src="comp_eq2.png" alt="" /></p>
+<p style="text-align: justify;" align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;"> A</span><span style="font-size: medium;"> competi&ccedil;&atilde;o </span><span style="font-size: medium;">&eacute;</span> <span style="font-size: medium;">c</span><span style="font-size: medium;">a</span><span style="font-size: medium;">racterizada</span><span style="font-size: medium;"> pel</span><span style="font-size: medium;">os</span><span style="font-size: medium;"> seguintes </span><span style="font-size: medium;">par&acirc;metros:</span></span></p>
+<ul style="text-align: justify;">
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;">N</span><span style="font-size: medium;">1</span><span style="font-size: medium;"> e N2</span><span style="font-size: medium;"> -&gt; os tamanhos das popula&ccedil;&otilde;es 1 e 2.</span></span></p>
+</li>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;">Coeficientes de competi&ccedil;&atilde;o </span><span style="color: #4d5156;"><span style="font-size: small;">&alpha;</span></span><span style="font-size: medium;"> e &beta; </span><span style="font-size: medium;">(</span><span style="font-size: medium;">alfa e beta</span><span style="font-size: medium;">)</span><span style="font-size: medium;"> -&gt; o efeito que a </span><span style="font-size: medium;">presen&ccedil;a</span><span style="font-size: medium;"> de </span><span style="font-size: medium;">cada indiv&iacute;duo</span> <span style="font-size: medium;">adicional </span><span style="font-size: medium;">de uma esp&eacute;cie tem sobre o tamanho populacional da outra.</span></span></p>
+</li>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;">K1 e K2 -&gt; a capacidade de suporte de cada esp&eacute;cie.</span></span></p>
+</li>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;"><strong>O resultado da competi&ccedil;&atilde;o &eacute; determinado pelos valores de N, K e pelos coeficientes de competi&ccedil;&atilde;o. </strong></span></span><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;">As taxas intr&iacute;nsecas de crescimento (r</span><sub><span style="font-size: medium;">1</span></sub><span style="font-size: medium;"> e r</span><sub><span style="font-size: medium;">2</span></sub><span style="font-size: medium;">) n&atilde;o afetam o resultado da competi&ccedil;&atilde;o, </span><span style="font-size: medium;">apenas a velocidade com que as mudan&ccedil;as no tamanho populacional ocorrem </span><span style="font-size: medium;">e o qu&atilde;o r&aacute;pido se chega no resultado da competi&ccedil;&atilde;o</span><span style="font-size: medium;">.</span></span></p>
+</li>
+</ul>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: large;">Premissas</span></span></p>
+<ul>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;">Sozinhas, as popula&ccedil;&otilde;es cresceriam de forma denso-dependente, ou seja, na aus&ecirc;ncia da outra, teriam crescimento log&iacute;stico at&eacute; a capacidade de suporte </span><span style="font-size: medium;">(</span><span style="font-size: medium;">ainda </span><span style="font-size: medium;">estariam sujeitas &agrave; competi&ccedil;&atilde;o intraespec&iacute;fica)</span><span style="font-size: medium;">. Por isso inclu&iacute;mos as mesmas premissas j&aacute; presentes no modelo log&iacute;stico, </span><span style="font-size: medium;">como a limita&ccedil;&atilde;o de recursos.</span></span></p>
+</li>
+<li>
+<p align="justify"><a name="_Hlk61876757"></a> <span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;">Cada popula&ccedil;&atilde;o tem sua taxa intr&iacute;nseca de crescimento (r) e capacidade de suporte (K) constantes. Os coeficientes de competi&ccedil;&atilde;o (</span><span style="color: #4d5156;"><span style="font-size: small;">&alpha;</span></span><span style="font-size: medium;"> e &beta;) tamb&eacute;m s&atilde;o constantes.</span></span></p>
+</li>
+<li>
+<p align="justify"><a name="_Hlk618767572"></a> <span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;">As duas esp&eacute;cies competem pelo mesmo recurso limitante, ent&atilde;o o tamanho da popula&ccedil;&atilde;o de uma esp&eacute;cie afeta o da outra. O efeito que o tamanho populacional que uma esp&eacute;cie tem </span><span style="font-size: medium;">sobre </span><span style="font-size: medium;">a outra &eacute; medido por uma constante, </span><span style="color: #4d5156;"><span style="font-size: small;">&alpha;</span></span> <span style="font-size: medium;">ou</span><span style="font-size: medium;"> &beta; </span><span style="font-size: medium;">(</span><span style="font-size: medium;">alfa ou beta</span><span style="font-size: medium;">)</span><span style="font-size: medium;">.</span></span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;">Essa competi&ccedil;&atilde;o frequentemente &eacute; assim&eacute;trica, ou seja, os efeitos da esp&eacute;cie 1 sobre a esp&eacute;cie 2 podem ser maiores do que os da esp&eacute;cie 2 sobre a esp&eacute;cie 1 ou vice-versa. </span><span style="font-size: medium;">Isso significa que frequentemente uma esp&eacute;cie &eacute; uma competidora mais forte do que a outra. No entanto, veremos mais &agrave; frente que n&atilde;o &eacute; apenas isso que define o resultado da competi&ccedil;&atilde;o.</span></span></p>
+</li>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;">O efeito da denso-depend&ecirc;ncia &eacute; linear, ou seja: </span><span style="font-size: medium;">assim como no crescimento log&iacute;stico, a adi&ccedil;&atilde;o de novos indiv&iacute;duos diminui o crescimento </span><span style="font-size: medium;"><em>per capita</em></span><span style="font-size: medium;"> da popula&ccedil;&atilde;o </span><span style="font-size: medium;">de forma linear.</span></span></p>
+</li>
+</ul>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: large;">C</span><span style="font-size: large;">oeficientes de competi&ccedil;&atilde;o </span></span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;"> Os coeficientes de competi&ccedil;&atilde;o</span><span style="font-size: medium;"> nos dizem o efeito que os indiv&iacute;duos de uma esp&eacute;cie t&ecirc;m sobre o crescimento da outra. </span></span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;"> &alpha; (ou &alpha;</span><sub><span style="font-size: medium;">12</span></sub><span style="font-size: medium;">) -&gt; efeito da esp&eacute;cie 2 sobre a esp&eacute;cie 1, ou simplesmente efeito da competi&ccedil;&atilde;o sobre a esp&eacute;cie 1</span></span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;"> &beta; (ou &alpha;</span><sub><span style="font-size: medium;">21</span></sub><span style="font-size: medium;">) -&gt; efeito da esp&eacute;cie 1 sobre a esp&eacute;cie 2, ou simplesmente efeito da competi&ccedil;&atilde;o sobre a esp&eacute;cie 2</span></span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;">Repare que na nota&ccedil;&atilde;o &alpha;</span><sub><span style="font-size: medium;"><strong>1</strong></span></sub><sub><span style="font-size: medium;">2 </span></sub><span style="font-size: medium;">e &alpha;</span><sub><span style="font-size: medium;"><strong>2</strong></span></sub><sub><span style="font-size: medium;">1</span></sub><span style="font-size: medium;">, o primeiro d&iacute;gito se refere &agrave; esp&eacute;cie que </span><span style="font-size: medium;"><strong>sofre</strong></span><span style="font-size: medium;"> o efeito.</span></span></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: large;">E</span><span style="font-size: large;">xplica&ccedil;&atilde;o do modelo</span></span></p>
+<p style="text-align: justify;" align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;"> Para entender, primeiro, vamos rever o modelo de crescimento log&iacute;stico de uma &uacute;nica popula&ccedil;&atilde;o:</span></span></p>
+<p style="text-align: center;" align="left"><img src="comp_eq3.png" alt="" /></p>
+<p style="text-align: center;" align="left">ou</p>
+<p style="text-align: center;" align="left"><img src="comp_eq4.png" alt="" /></p>
+<p style="text-align: center;" align="left">Eq 3 e Eq 4</p>
+<p style="text-align: justify;" align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;">Ou seja: </span><span style="font-size: medium;">a taxa de</span><span style="font-size: medium;"> crescimento log&iacute;stico da popula&ccedil;&atilde;o </span><span style="font-size: medium;">em determinado ponto</span><span style="font-size: medium;"> &eacute; o crescimento exponencial </span><span style="font-size: medium;"><em><strong>rN</strong></em></span> <span style="font-size: medium;">multiplicado pela propor&ccedil;&atilde;o da capacidade de suporte ainda n&atilde;o preenchida. Lembrando que esta n&atilde;o &eacute; a equa&ccedil;&atilde;o para calcular o tamanho populacional em um tempo t, mas sim a que define o modelo e descreve a curva no gr&aacute;fico, </span><span style="font-size: medium;">nos dando a varia&ccedil;&atilde;o instant&acirc;nea a cada ponto </span><span style="font-size: medium;">(ou intervalo de tempo muito pequeno)</span><span style="font-size: medium;">.</span></span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;"> Em um cen&aacute;rio de competi&ccedil;&atilde;o, al&eacute;m de cada popula&ccedil;&atilde;o ter o crescimento limitado pelo preenchimento da capacidade de suporte, tamb&eacute;m sofre efeito da quantidade de indiv&iacute;duos da popula&ccedil;&atilde;o competidora.</span></span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;"> Para uma esp&eacute;cie 1 competindo com uma esp&eacute;cie 2, temos que:</span></span></p>
+<p style="text-align: center;" align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;"><img src="comp_eq5.png" alt="" /></span></span></p>
+<p style="text-align: center;" align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;">Eq 5</span></span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;">Em que &alpha; &eacute; quantos indiv&iacute;duos da esp&eacute;cie N1 ter&atilde;o a menos a cada indiv&iacute;duo da esp&eacute;cie N2 presentes.</span></span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;"> Se </span><span style="font-size: small;">&alpha;</span><span style="font-size: small;"> = 2</span><span style="font-size: medium;">, por exemplo, a popula&ccedil;&atilde;o da esp&eacute;cie 1 ter&aacute; o crescimento instant&acirc;neo determinado pelo modelo log&iacute;stico menos duas vezes a quantidade de indiv&iacute;duos da popula&ccedil;&atilde;o N2. Nesse cen&aacute;rio, um indiv&iacute;duo da esp&eacute;cie 2 &ldquo;equivale&rdquo; a dois indiv&iacute;duos da esp&eacute;cie 1, </span><span style="font-size: medium;">ocupando o espa&ccedil;o de dois indiv&iacute;duos da esp&eacute;cie 1 em sua capacidade de suporte K1.</span></span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: large;">Espa&ccedil;o de fase e suas isoclinas</span></span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;"> Quando falamos de competi&ccedil;&atilde;o, &eacute; comum expressarmos a intera&ccedil;&atilde;o em um gr&aacute;fico que combina o tamanho populacional de ambas as esp&eacute;cies (N1 e N2). Este gr&aacute;fico &eacute; chamado de </span><span style="font-size: medium;"><strong>espa&ccedil;o de fase</strong></span><span style="font-size: medium;">.</span></span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> <span style="font-size: medium;">No espa&ccedil;o de fase, cada ponto representa uma combina&ccedil;&atilde;o de n&uacute;mero de indiv&iacute;duos de N1 e N2.</span></span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;"> Nesse gr&aacute;fico, tra&ccedil;amos a</span><span style="font-size: medium;"><strong> isoclina </strong></span><span style="font-size: medium;">de cada esp&eacute;cie: linha sobre a qual o crescimento populacional da esp&eacute;cie &eacute; igual a zero.</span></span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;"> Os pontos dessa linha s&atilde;o combina&ccedil;&otilde;es de N1 e N2 nas quais o crescimento populacional da esp&eacute;cie a que se refere &eacute; nulo.</span></span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;"> Vamos olhar apenas para a isoclina da <strong>esp&eacute;cie 1</strong>. Esta linha, sobre qual o crescimento de N1 &eacute; zero, corta o gr&aacute;fico em dois pontos: </span></span></p>
+<ul>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;">No <strong>eixo </strong><strong>x</strong> (N1), a capacidade de suporte da esp&eacute;cie 1 (<strong>K1</strong>), estado em que mesmo sozinha seu crescimento seria 0</span></span></p>
+</li>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;">No <strong>eixo</strong> <strong>y</strong> (N2), <strong>K1/&alpha;</strong> -&gt; n&uacute;mero de indiv&iacute;duos da esp&eacute;cie 2 (valor de N2) em que estes ocupam toda a capacidade de suporte da esp&eacute;cie 1 (K1)</span></span></p>
+</li>
+</ul>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;"> Ex: K1 = 100 e &alpha; = 2</span></span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;"> Como cada indiv&iacute;duo da esp&eacute;cie 2 equivale a dois indiv&iacute;duos da esp&eacute;cie 1, precisamos de 50 deles para preencher a capacidade de suporte da esp&eacute;cie 1 (K<sub>1</sub>)</span></span></p>
+<p align="justify">&nbsp;</p>
+<p align="center"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;">K1/&alpha; = 100/2</span></span></p>
+<p align="center"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;">K1/</span></span><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;">&alpha; </span></span><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;"> = 50 indiv&iacute;duos</span></span></p>
+<p align="center">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;"> Entre os valores de </span><span style="font-size: medium;">N1 = K1 </span><span style="font-size: medium;">e </span><span style="font-size: medium;">N2 = K1/</span><span style="font-size: medium;">&alpha;</span><span style="font-size: medium;">, temos uma reta de combina&ccedil;&otilde;es de </span><span style="font-size: medium;">valores de</span><span style="font-size: medium;"> N1 e N2 que causam o mesmo efeito do crescimento populacional da esp&eacute;cie 1 ser </span><span style="font-size: medium;">igual a zero</span><span style="font-size: medium;">. </span><span style="font-size: medium;">Ou seja, s&atilde;o combina&ccedil;&otilde;es de valores em que toda a capacidade de suporte da esp&eacute;cie 1 est&aacute; preenchida por indiv&iacute;duos dela mesma e da esp&eacute;cie competidora.</span></span></p>
+<p style="text-align: center;" align="justify"><span style="font-family: Calibri, sans-serif;"><img src="comp1.png" alt="" /></span></p>
+<p style="text-align: center;" align="justify"><span style="font-family: Calibri, sans-serif;">Legenda</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;"> O mesmo &eacute; v&aacute;lido para a isoclina da esp&eacute;cie 2, mas nesse caso </span><span style="font-size: medium;">os pontos em cada eixo ser&atilde;o:</span></span></p>
+<ul>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;"><strong>E</strong></span><span style="font-size: medium;"><strong>ixo y</strong></span><span style="font-size: medium;"> (N2) -&gt; </span><span style="font-size: medium;"><strong>K2</strong></span></span></p>
+</li>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;"><strong>E</strong><strong>ixo x</strong> (N1) -&gt; <strong>K2/ &beta;</strong></span></span></p>
+</li>
+</ul>
+<p style="text-align: center;">&nbsp;</p>
+<p style="text-align: center;"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;"><strong><img src="comp2.png" alt="" /></strong></span></span></p>
+<p style="text-align: center;"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;">Legenda</span></span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: large;"><strong>Em que parte do gr&aacute;fico as popula&ccedil;&otilde;es est&atilde;o crescendo ou decrescendo?</strong></span></span></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;"> Lembre que cada ponto no gr&aacute;fico &eacute; uma combina&ccedil;&atilde;o de valores de N1 e N2. A isoclina &eacute; a linha formada pelo conjunto de pontos em que o crescimento populacional &eacute; igual a zero </span><span style="font-size: medium;">para uma das esp&eacute;cies (temos </span><span style="font-size: medium;">uma </span><span style="font-size: medium;">isoclina </span><span style="font-size: medium;">para cada esp&eacute;cie</span><span style="font-size: medium;">)</span><span style="font-size: medium;">.</span></span></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;"><strong>Abaixo da isoclina</strong></span></span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;"> Olhando apenas para a esp&eacute;cie 1, quando olhamos para os pontos abaixo da isoclina (toda a &aacute;rea do gr&aacute;fico abaixo dela), ainda n&atilde;o alcan&ccedil;amos uma combina&ccedil;&atilde;o de valores de N1 e N2 em que o crescimento </span><span style="font-size: medium;">se torna igual a zero (pelo preenchimento da capacidade de suporte K1 </span><span style="font-size: medium;">por N1 e N2</span><span style="font-size: medium;">)</span> <span style="font-size: medium;">e a popula&ccedil;&atilde;o de N1 estar&aacute; crescendo.</span></span></p>
+<p align="justify">&nbsp;</p>
+<p align="center"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;">N1 + N2&alpha; &lt; K1</span></span></p>
+<p align="center">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;"> Em outras palavras, os indiv&iacute;duos das duas esp&eacute;cies somad</span><span style="font-size: medium;">a</span><span style="font-size: medium;">s ainda n&atilde;o preencheram a capacidade de suporte K1. Lembrando que </span><span style="font-size: medium;">o total</span> <span style="font-size: medium;">de </span><span style="font-size: medium;">indiv&iacute;duos da esp&eacute;cie 2 precisa ser multiplicado por </span><span style="font-size: small;">&alpha;</span><span style="font-size: medium;"> para sabermos a quantos indiv&iacute;duos da esp&eacute;cie 1 equivalem </span><span style="font-size: medium;">no preenchimento da capacidade de suporte K1</span><span style="font-size: medium;">.</span></span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><strong><span style="font-size: medium;">A</span><span style="font-size: medium;">cima da isoclina</span></strong></span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;"> Acima da isoclina, temos combina&ccedil;&otilde;es de N1 e N2 que ultrapassam o preenchimento da capacidade de suporte da esp&eacute;cie 1 (K1), por isso N1 decrescer&aacute;.</span></span></p>
+<p align="justify">&nbsp;</p>
+<p align="center"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;">N1 + N2&alpha; &gt; K1</span></span></p>
+<p align="center">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;"> O mesmo &eacute; v&aacute;lido para a esp&eacute;cie 2 e sua isoclina.</span></span></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><strong>Como identificar de qual esp&eacute;cie &eacute; cada isoclina?</strong></span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> Lembre-se que a isoclina da esp&eacute;cie 1 &eacute; a que possui uma extremidade no ponto <strong>N1 =</strong><strong> K1</strong>, marcado <strong>sobre </strong><strong>o eixo N1</strong> (onde N2 = 0). O mesmo para a esp&eacute;cie 2 e K2.</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;"> A extremidade que possui o coeficiente de competi&ccedil;&atilde;o (&alpha; ou &beta;) diz respeito &agrave; competi&ccedil;&atilde;o com a <strong>outra</strong> esp&eacute;cie. Ent&atilde;o K1/&alpha; fica sobre o eixo N2 (onde N1 = 0) e K2/&beta; sobre o eixo N1 (onde N2 = 0).</span></span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> <span style="font-size: medium;">K1/</span><span style="font-size: medium;">&alpha; </span><span style="font-size: medium;">e </span><span style="font-size: medium;">K2/&beta; </span><span style="font-size: medium;">s&atilde;o pontos em que a capacidade de suporte de N1 ou N2 est&aacute; to</span><span style="font-size: medium;">talmente</span><span style="font-size: medium;"> preenchida pela competidora.</span></span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> <span style="font-size: medium;">Na imagem abaixo, vemos os valores nas extremidades de cada isoclina:</span></span></p>
+<p style="text-align: center;" align="justify"><span style="font-family: Calibri, sans-serif;"><img src="comp3.png" alt="" /></span></p>
+<p style="text-align: center;" align="justify"><span style="font-family: Calibri, sans-serif;">Legenda</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;"><strong>Quem ganha a competi&ccedil;&atilde;o?</strong></span></span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> Para definir, pelo gr&aacute;fico, qual esp&eacute;cie ganha a competi&ccedil;&atilde;o, &eacute; importante perguntarmos:</span></p>
+<ul>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">Qual a isoclina de cada esp&eacute;cie?</span></p>
+</li>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">Qual &eacute; a din&acirc;mica (se cada popula&ccedil;&atilde;o est&aacute; crescendo ou decrescendo) em cada &aacute;rea do gr&aacute;fico?</span></p>
+</li>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">Qual o ponto que representa as condi&ccedil;&otilde;es iniciais (tamanho inicial das popula&ccedil;&otilde;es N1 e N2) e em que &aacute;rea se encontra?</span></p>
+</li>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">Qual o caminho que as popula&ccedil;&otilde;es percorrer&atilde;o no gr&aacute;fico a partir das condi&ccedil;&otilde;es iniciais at&eacute; um ponto de equil&iacute;brio?</span></p>
+</li>
+</ul>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><strong>Resultados poss&iacute;veis da competi&ccedil;&atilde;o</strong></span></p>
+<ul>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><strong>Se as i</strong><strong>soclinas </strong><strong>n&atilde;o se cruzam</strong><strong>:</strong> uma das esp&eacute;cies ganha a competi&ccedil;&atilde;o (com exclus&atilde;o competitiva da oura)</span></p>
+</li>
+</ul>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> Quando as isoclinas n&atilde;o se cruzam, a esp&eacute;cie cuja isoclina est&aacute; acima ganha a competi&ccedil;&atilde;o, independente de em que &aacute;rea se encontra o ponto das condi&ccedil;&otilde;es iniciais. </span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> Ex: se a isoclina da esp&eacute;cie 2 est&aacute; acima, o resultado final ser&aacute; K2 indiv&iacute;duos da esp&eacute;cie 2 e 0 indiv&iacute;duos da esp&eacute;cie 1.</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> Lembre-se que abaixo da isoclina de uma esp&eacute;cie, sua popula&ccedil;&atilde;o cresce. Acima, a popula&ccedil;&atilde;o decresce. Em <span style="color: #c9211e;"><strong>vermelho</strong></span> temos a dire&ccedil;&atilde;o (se est&aacute; aumentando ou diminuindo) da <span style="color: #c9211e;"><strong>esp&eacute;cie 1 (eixo x)</strong></span> e em <span style="color: #3465a4;"><strong>azul</strong></span>, da <span style="color: #3465a4;"><strong>esp&eacute;cie 2 (eixo y)</strong></span>.</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> A seta <span style="color: #800080;"><strong>roxa</strong></span> representa o resultado vetorial da din&acirc;mica entre as duas esp&eacute;cies em cada &aacute;rea.</span></p>
+<p style="text-align: center;" align="justify"><span style="font-family: Calibri, sans-serif;"><img src="comp4.png" alt="" /></span></p>
+<p style="text-align: center;" align="justify"><span style="font-family: Calibri, sans-serif;">legenda</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">Na <span style="color: #000000;"><strong>&aacute;rea 1</strong></span>, ambas as popula&ccedil;&otilde;es estar&atilde;o crescendo. </span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> Na <span style="color: #000000;"><strong>&aacute;rea 2</strong></span> a popula&ccedil;&atilde;o <span style="color: #3465a4;"><strong>N</strong></span><span style="color: #3465a4;"><strong>2</strong></span><span style="color: #3465a4;"><strong> (eixo </strong></span><span style="color: #3465a4;"><strong>y</strong></span><span style="color: #3465a4;"><strong>)</strong></span> continua crescendo enquanto <span style="color: #c9211e;"><strong>N</strong></span><span style="color: #c9211e;"><strong>1</strong></span><span style="color: #c9211e;"><strong> (eixo </strong></span><span style="color: #c9211e;"><strong>x</strong></span><span style="color: #c9211e;"><strong>)</strong></span> j&aacute; ultrapassou K1 e por isso est&aacute; diminuindo. Consequentemente, N2 continuar&aacute; crescendo at&eacute; K2 e excluir&aacute; a popula&ccedil;&atilde;o N1, cuja popula&ccedil;&atilde;o chegar&aacute; a 0.</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> Na <span style="color: #000000;"><strong>&aacute;rea 3</strong></span>, ambas as popula&ccedil;&otilde;es come&ccedil;ar&atilde;o diminuindo, pois ambas est&atilde;o acima da capacidade de suporte. O sistema entrar&aacute; na <span style="color: #000000;"><strong>&aacute;rea 2</strong></span> [?] e a popula&ccedil;&atilde;o N2 atingir&aacute; sua capacidade de suporte, tamb&eacute;m excluindo a popula&ccedil;&atilde;o N1. [Chega a entrar na &aacute;rea 2 ou s&oacute; faz o caminho por cima da isoclina at&eacute; o ponto de equil&iacute;brio?]</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> O gr&aacute;fico abaixo mostra a popula&ccedil;&atilde;o de cada esp&eacute;cie em fun&ccedil;&atilde;o do tempo:</span></p>
+<p style="text-align: center;" align="justify"><span style="font-family: Calibri, sans-serif;"><img src="comp5.png" alt="" /></span></p>
+<p style="text-align: center;" align="justify"><span style="font-family: Calibri, sans-serif;">legenda</span></p>
+<ul>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><strong>Se as isolinhas se cruzam</strong></span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">Temos duas formas diferentes de equil&iacute;brio:</span></p>
+</li>
+</ul>
+<ul>
+<ul>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">Equil&iacute;brio est&aacute;vel (coexist&ecirc;ncia)</span></p>
+</li>
+</ul>
+</ul>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> Quando as isoclinas se cruzam e as extremidades <strong>internas</strong> s&atilde;o os valores <strong>K1 e K2</strong>.</span></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> N&atilde;o importa a &aacute;rea em que se inicie no gr&aacute;fico, os vetores sempre apontar&atilde;o para o ponto no centro onde as isoclinas se cruzam. Este &eacute; um ponto de equil&iacute;brio, pois est&aacute; sobre ambas as isoclinas e nenhuma das popula&ccedil;&otilde;es aumenta e diminui. Sobre este ponto, dN/dt = 0 para ambas as popula&ccedil;&otilde;es. </span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> O equil&iacute;brio &eacute; est&aacute;vel porque n&atilde;o importa de onde parta o sistema (as condi&ccedil;&otilde;es iniciais), o resultado sempre ser&aacute; o mesmo. Se o sistema for perturbado (deslocado do ponto de equil&iacute;brio), tamb&eacute;m retornar&aacute; para o mesmo.</span></p>
+<p align="center"><img src="comp6.png" alt="" /></p>
+<p align="center"><span style="font-family: Calibri, sans-serif;">legenda</span></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">Abaixo temos um exemplo em que o sistema se inicia acima da isoclina de N1 (N1 come&ccedil;a diminuindo) e abaixo da isoclina de N2 (N2 come&ccedil;a crescendo), mas ambas as popula&ccedil;&otilde;es se estabilizam em um valor intermedi&aacute;rio entre seu valor inicial e sua capacidade de suporte.</span></p>
+<p align="justify">&nbsp;</p>
+<p align="center"><img src="comp7.png" alt="" /></p>
+<p align="center"><span style="font-family: Calibri, sans-serif;">legenda</span></p>
+<p align="center">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">No exemplo acima, por acaso este valor &eacute; o mesmo (N1 = N2 = 600). No entanto, os valores final de N1 e N2 tamb&eacute;m podem ser diferente entre si:</span></p>
+<p align="center">&nbsp;</p>
+<p align="center"><img src="comp8.png" alt="" /></p>
+<p align="center">&nbsp;</p>
+<p align="center"><span style="font-family: Calibri, sans-serif;">legenda</span></p>
+<p align="justify">&nbsp;</p>
+<ul>
+<ul>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">Equil&iacute;brio inst&aacute;vel (exclus&atilde;o competitiva &ndash; quem ganha depende das condi&ccedil;&otilde;es iniciais)</span></p>
+</li>
+</ul>
+</ul>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> Quando as isoclinas se cruzam e as extremidades <strong>externas</strong> s&atilde;o os valores <strong>K1 e K2</strong>.</span></p>
+<p style="text-align: center;" align="justify"><span style="font-family: Calibri, sans-serif;"><img src="comp9.png" alt="" /></span></p>
+<p style="text-align: center;" align="justify"><span style="font-family: Calibri, sans-serif;">legenda</span></p>
+<p style="text-align: justify;" align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">Se a competi&ccedil;&atilde;o se inicia na <strong>&aacute;rea </strong><span style="color: #000000;"><strong>1</strong></span>, ambas as popula&ccedil;&otilde;es estar&atilde;o crescendo. Na <strong>&aacute;rea</strong> <span style="color: #000000;"><strong>3</strong></span> ambas as popula&ccedil;&otilde;es estar&atilde;o diminuindo. Ambos os vetores apontam para o ponto em que as isoclinas se cruzam (&ldquo;para dentro&rdquo;), o ponto de equil&iacute;brio <strong>inst&aacute;vel</strong>. O equil&iacute;brio &eacute; inst&aacute;vel pois se houver alguma flutua&ccedil;&atilde;o que coloque o sistema nas <span style="color: #000000;"><strong>&aacute;reas</strong></span> <span style="color: #000000;"><strong>2</strong></span> ou <span style="color: #000000;"><strong>4</strong></span>, uma das esp&eacute;cies ser&aacute; exclu&iacute;da pela outra.</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> Se o sistema se iniciar ou flutuar para a <span style="color: #000000;"><strong>&aacute;rea 2</strong></span>, a popula&ccedil;&atilde;o N2 alcan&ccedil;ar&aacute; sua capacidade de suporte e a popula&ccedil;&atilde;o N1 ser&aacute; extinta.</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> Se o sistema se iniciar ou flutuar para a <span style="color: #000000;"><strong>&aacute;rea 4</strong></span>, a popula&ccedil;&atilde;o N1 alcan&ccedil;ar&aacute; sua capacidade de suporte e a popula&ccedil;&atilde;o N2 ser&aacute; extinta.</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> Por conta disso, <strong>K1</strong> e <strong>K2</strong> s&atilde;o <strong>pontos de equil&iacute;brio est&aacute;veis</strong> do sistema. Qual deles ser&aacute; atingido depender&aacute; das condi&ccedil;&otilde;es iniciais (se o sistema come&ccedil;ar nas <span style="color: #000000;"><strong>&aacute;reas 2</strong></span> ou <span style="color: #000000;"><strong>4</strong></span>) ou de flutua&ccedil;&otilde;es ap&oacute;s o sistema ter atingido o ponto de equil&iacute;brio inst&aacute;vel (se come&ccedil;ar nas <span style="color: #000000;"><strong>&aacute;reas 1</strong></span> ou<span style="color: #000000;"><strong> 3</strong></span>).</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;"> OBS: apesar do sistema ter dois pontos est&aacute;veis poss&iacute;veis em K1 e K2 (dois poss&iacute;veis resultados da competi&ccedil;&atilde;o), o sistema como um todo se caracteriza pela exist&ecirc;ncia do equil&iacute;brio inst&aacute;vel.</span></span></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><strong> Dicas para a constru&ccedil;&atilde;o do gr&aacute;fico</strong></span></p>
+<ul>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">Identifique os eixos por escrito. A popula&ccedil;&atilde;o N1 &eacute; sempre denotada no eixo x e a popula&ccedil;&atilde;o N2, no eixo y.</span></p>
+</li>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">Trace a isoclina</span><span style="font-family: Calibri, sans-serif;"> da esp&eacute;cie 1 (eixo x): lembre-se que a isoclina &eacute; o conjunto de pontos em que o crescimento da esp&eacute;cie 1 &eacute; igual a zero. H&aacute; dois pontos extremos em que </span><span style="font-family: Calibri, sans-serif;">isso acontece</span><span style="font-family: Calibri, sans-serif;">: </span></p>
+<ul>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">K1 (capacidade de suporte da esp&eacute;cie 1), marcado sobre o eixo N1</span></p>
+</li>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">K1/&alpha;, que &eacute; a quantidade de indiv&iacute;duos da esp&eacute;cie 2 que ocupa toda a capacidade de suporte da esp&eacute;cie 1, a levando &agrave; extin&ccedil;&atilde;o. Se refere a uma quantidade de indiv&iacute;duos da esp&eacute;cie 2 e por isso &eacute; marcada no eixo N2.</span></p>
+</li>
+</ul>
+</li>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">Trace a isoclina</span><span style="font-family: Calibri, sans-serif;"> da esp&eacute;cie </span><span style="font-family: Calibri, sans-serif;">2 segundo os mesmos princ&iacute;pios</span><span style="font-family: Calibri, sans-serif;">, </span><span style="font-family: Calibri, sans-serif;">mas </span><span style="font-family: Calibri, sans-serif;">utilizando K2 e K2/&beta;</span><span style="font-family: Calibri, sans-serif;">.</span></p>
+</li>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">E</span><span style="font-family: Calibri, sans-serif;">screva </span><span style="font-family: Calibri, sans-serif;">no gr&aacute;fico</span><span style="font-family: Calibri, sans-serif;"> a equa&ccedil;&atilde;o </span><span style="font-family: Calibri, sans-serif;">de</span><span style="font-family: Calibri, sans-serif;"> cada isoclina, </span><span style="font-family: Calibri, sans-serif;">o que explica ao que cada linha se refere</span><span style="font-family: Calibri, sans-serif;">. Lembre-se, a isoclina </span><span style="font-family: Calibri, sans-serif;">abrange os pontos nos quais </span><span style="font-family: Calibri, sans-serif;">o crescimento d</span><span style="font-family: Calibri, sans-serif;">a</span><span style="font-family: Calibri, sans-serif;"> esp&eacute;cie &eacute; igual a 0. </span></p>
+<p align="left"><span style="font-family: Calibri, sans-serif;">Matematicamente: </span><span style="font-family: Calibri, sans-serif;"><strong>dN1/dt=0 </strong></span><span style="font-family: Calibri, sans-serif;">e</span> <span style="font-family: Calibri, sans-serif;"><strong>dN</strong></span><span style="font-family: Calibri, sans-serif;"><strong>2</strong></span><span style="font-family: Calibri, sans-serif;"><strong>/dt=0</strong></span><span style="font-family: Calibri, sans-serif;">.</span></p>
+</li>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">Marque o ponto das condi&ccedil;&otilde;es iniciais (combina&ccedil;&atilde;o inicial dos valores de N1 e N2) e os vetores que partem daquele ponto (baseado em que &aacute;rea do gr&aacute;fico o ponto se encontra).</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">Lembre-se: abaixo da isoclina de uma esp&eacute;cie, sua popula&ccedil;&atilde;o est&aacute; crescendo. Acima, est&aacute; decrescendo. N&atilde;o se esque&ccedil;a do vetor resultante (seta do meio, um pouco maior), que indica a dire&ccedil;&atilde;o do sistema quando se encontra naquela &aacute;rea.</span></p>
+</li>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">Represente</span><span style="font-family: Calibri, sans-serif;"> os vetores de cada &aacute;rea, al&eacute;m do ponto inicial. </span></p>
+</li>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">Identifique o resultado da competi&ccedil;&atilde;o e denote o(s) ponto(s) de equil&iacute;brio. Baseado no vetor das condi&ccedil;&otilde;es iniciais e nos vetores de cada &aacute;rea do gr&aacute;fico, qual dos poss&iacute;veis pontos de equil&iacute;brio ser&aacute; o resultado da competi&ccedil;&atilde;o?</span></p>
+<ul>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">K1, se a esp&eacute;cie 1 ganhar a competi&ccedil;&atilde;o (exclus&atilde;o competitiva)</span></p>
+</li>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">K2, se a esp&eacute;cie 2 ganhar a competi&ccedil;&atilde;o (exclus&atilde;o competitiva)</span></p>
+</li>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">Ponto em que as isoclinas se cruzam (quando todos os vetores resultantes apontarem para o centro) &ndash; ponto de equil&iacute;brio est&aacute;vel (coexist&ecirc;ncia, equil&iacute;brio est&aacute;vel)</span></p>
+</li>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">Equil&iacute;brio inst&aacute;vel (exclus&atilde;o competitiva)</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">Quando um par de vetores aponta para o centro, mas outro par aponta cada um para uma capacidade de suporte.</span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">Se o ponto das condi&ccedil;&otilde;es iniciais estiver em uma &aacute;rea que aponta para o centro, teremos equil&iacute;brio inst&aacute;vel e n&atilde;o se sabe qual esp&eacute;cie ganhar&aacute; a competi&ccedil;&atilde;o. Nesse caso, K1 e K2 s&atilde;o os dois poss&iacute;veis pontos de equil&iacute;brio est&aacute;vel e poss&iacute;veis resultados da competi&ccedil;&atilde;o. </span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">Se o ponto das condi&ccedil;&otilde;es iniciais estiver em uma &aacute;rea que aponta &ldquo;para fora&rdquo; em dire&ccedil;&atilde;o a uma das capacidades de suporte (ex: K2), esta esp&eacute;cie ganhar&aacute; a competi&ccedil;&atilde;o e sua capacidade de suporte (K2) ser&aacute; o ponto de equil&iacute;brio est&aacute;vel do sistema.</span></p>
+</li>
+</ul>
+</li>
+<li>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;">Mostre o caminho, com uma seta, do ponto inicial at&eacute; o resultado da competi&ccedil;&atilde;o.</span></span></p>
+</li>
+</ul>
+<p>&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"><span style="font-size: large;"><strong>Exerc&iacute;cios</strong></span></span></p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;"> No modelo de Competi&ccedil;&atilde;o, utilize os par&acirc;metros informados para visualizar os gr&aacute;ficos resultantes e responder &agrave;s perguntas. O ponto preto na &aacute;rea do gr&aacute;fico representa as condi&ccedil;&otilde;es iniciais. Utilize seus conhecimentos para verificar o comportamento dos gr&aacute;ficos em cada &aacute;rea (se necess&aacute;rio, utilize um rascunho para anotar os vetores de cada &aacute;rea).</span></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, sans-serif;">1) Utilize os par&acirc;metros a seguir para o gr&aacute;fico de competi&ccedil;&atilde;o:</span></p>
+<p align="left"><span style="font-family: Calibri, sans-serif;">N1 = N2 = 50</span></p>
+<p align="left"><span style="font-family: Calibri, sans-serif;">r1 = r2 = 0,5</span></p>
+<p align="left"><span style="font-family: Calibri, sans-serif;">K1 = 100</span></p>
+<p align="left"><span style="font-family: Calibri, sans-serif;">K2 = 50</span></p>
+<p align="left"><span style="font-family: Calibri, sans-serif;">&alpha; = 0,5</span></p>
+<p align="left"><span style="font-family: Calibri, sans-serif;">&beta; = 0,3</span></p>
+<p align="left"><span style="font-family: Calibri, sans-serif;">t = 100</span></p>
+<p align="left">&nbsp;</p>
+<p align="left"><span style="font-family: Calibri, sans-serif;">a)Qual o resultado da competi&ccedil;&atilde;o? Uma das esp&eacute;cies exclui a outra? Se sim, qual?</span></p>
+<p align="left"><span style="font-family: Calibri, sans-serif;">b)Qual o(s) pontos de equil&iacute;brio do sistema? O equil&iacute;brio neste(s) ponto(s) &eacute; est&aacute;vel ou inst&aacute;vel?</span></p>
+<p align="left"><span style="font-family: Calibri, sans-serif;">c)Altere os valores de r de ambas as esp&eacute;cies. O resultado da competi&ccedil;&atilde;o &eacute; alterado? O que acontece?</span></p>
+<p align="left"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;">d)</span><span style="font-size: medium;">Se retir&aacute;ssemos uma das esp&eacute;cies da competi&ccedil;&atilde;o, o que aconteceria com a outra?</span></span></p>
+<p align="left">&nbsp;</p>
+<p align="left"><span style="font-family: Calibri, sans-serif;">2) Altere apenas os seguintes valores:</span></p>
+<p align="left"><span style="font-family: Calibri, sans-serif;">N1 = 110</span></p>
+<p align="left"><span style="font-family: Calibri, sans-serif;">N2 = 10</span></p>
+<p align="left">&nbsp;</p>
+<p align="left"><span style="font-family: Calibri, sans-serif;">a)O que acontece com os gr&aacute;ficos?</span></p>
+<p align="left"><span style="font-family: Calibri, sans-serif;">b)O resultado da competi&ccedil;&atilde;o &eacute; alterado? Por qu&ecirc;?</span></p>
+<p align="left"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;">c)Qual o(s) pontos de equil&iacute;brio do sistema? O equil&iacute;brio neste(s) ponto(s) &eacute; est&aacute;vel ou inst&aacute;vel?</span></span></p>
+<p align="left">&nbsp;</p>
+<p align="left"><span style="font-family: Calibri, sans-serif;">3) Utilize os seguintes par&acirc;metros:</span></p>
+<p align="left"><span style="font-family: Calibri, sans-serif;">N1 = 300</span></p>
+<p align="left"><span style="font-family: Calibri, sans-serif;">N2 = 900</span></p>
+<p align="left"><span style="font-family: Calibri, sans-serif;">r1 = r2 = 0,5</span></p>
+<p align="left"><span style="font-family: Calibri, sans-serif;">K1 = K2 = 1000</span></p>
+<p align="left"><span style="font-family: Calibri, sans-serif;">&alpha; = 2</span></p>
+<p align="left"><span style="font-family: Calibri, sans-serif;">&beta; = 2</span></p>
+<p align="left"><span style="font-family: Calibri, sans-serif;">t = 100</span></p>
+<p align="left">&nbsp;</p>
+<p align="left"><span style="font-family: Calibri, sans-serif;">a) Qual o resultado da competi&ccedil;&atilde;o? Uma das esp&eacute;cies exclui a outra? Se sim, qual?</span></p>
+<p align="left"><span style="font-family: Calibri, sans-serif;">b) Qual o(s) pontos de equil&iacute;brio do sistema? O equil&iacute;brio neste(s) ponto(s) &eacute; est&aacute;vel ou inst&aacute;vel?</span></p>
+<p align="left">&nbsp;</p>
+<p align="left"><span style="font-family: Calibri, sans-serif;">4) Mude as abund&acirc;ncias iniciais para:</span></p>
+<p align="left"><span style="font-family: Calibri, sans-serif;">N1 = 500</span></p>
+<p align="left"><span style="font-family: Calibri, sans-serif;">N2 = 400</span></p>
+<p align="left">&nbsp;</p>
+<p align="left"><span style="font-family: Calibri, sans-serif;"><span style="font-size: medium;">O resultado da competi&ccedil;&atilde;o &eacute; alterado? </span><span style="font-size: medium;">Por qu&ecirc;?</span></span></p>
+<p align="left">&nbsp;</p>
