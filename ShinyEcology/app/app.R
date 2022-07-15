@@ -13,113 +13,148 @@ ui <- fluidPage( #início do código da interface gráfica
   uiOutput("license"),
   
   br(),
-  
   tabsetPanel(type = "tabs",
-              tabPanel(title = "Crescimento Geométrico", sidebarLayout(
-                sidebarPanel(sliderInput("N0GeoIn", "N0",
-                                         min = 1, max = 100, value = 5),
-                             numericInput("RGeoIn", "R",
-                                          value = 1),
-                             sliderInput("tGeoIn", "t",
-                                         min = 0, max = 100, value = 50),
-                             br(),
-                             
-                             h4(textOutput("geoOut"))
-                ),
-                mainPanel(plotOutput("geoGplot"),
-                          includeHTML("CrescimentoGeometrico.html")
-                )
-              )),
-  
-  tabPanel(title = "Exponencial", sidebarLayout( #início do próximo modelo
-    sidebarPanel(sliderInput("N0ExpIn", "N0",
-                             min = 1, max = 100, value = 1),
-                 numericInput("rExpIn", "r",
-                             value = 0.1, step = 0.01),
-                 sliderInput("tExpIn", "t",
-                             min = 0, max = 100, value = 50),
-                 h4(textOutput("expOut")), h4(textOutput("expDoublingTime")
-                 )),
-    mainPanel(plotOutput("expGPlot"),
-              br(),
-              includeHTML("CrescimentoExponencial.html"))) 
-  ),
-  
-  tabPanel(title = "Logístico", sidebarLayout(
-    sidebarPanel(sliderInput("N0LogIn", "N0",
-                             min = 1, max = 100, value = 1),
-                 numericInput("rLogIn", "r",
-                             min = -3, max = 3, value = 0.2, step = 0.01),
-                 sliderInput("tLogIn", "t",
-                             min = 0, max = 100, value = 80),
-                 sliderInput("kLogIn", "K", min = 0, max = 100, value = 50),
-                 br(),
-                 h4(textOutput("logOut"))
-                 ),
-    mainPanel(plotOutput("logGPlot"),
-              br(),
-              includeHTML("Logistico.html"),)
-  )),
-  
-  tabPanel(title = "Competição", sidebarLayout(
-    sidebarPanel(numericInput("N01Comp", "N01",
-                             min = 1, max = 3000, value = 300, step = 1),
-                 numericInput("N02Comp", "N02",
-                                          min = 1, max = 3000, value = 900, step = 1),
-                 numericInput("r1Comp", "r1",
-                             min = -5, max = 5, value = 0.5, step = 0.01),
-                 numericInput("r2Comp", "r2",
-                             min = -5, max = 5, value = 0.5, step = 0.01),
-                 numericInput("K1Comp", "K1", min = 1, max = 1000, value = 1000, step = 1),
-                 numericInput("K2Comp", "K2", min = 0, max = 1000, value = 1000, step = 1),
-                 numericInput("alphaComp", "alpha", min = 0, max = 100, value = 2, step = 0.005),
-                 numericInput("betaComp", "beta", min = 0, max = 100, value = 2, step = 0.005),
-                 sliderInput("tComp", "t", min = 1, max = 1000, value = 100),
-                 br(),
-                 h4(textOutput("compOut1")),
-                 h4(textOutput("compOut2"))
-                 
-    ),
-    mainPanel(plotOutput("compPlot"),
-              br(),
-              plotOutput("compIsoPlot"),
-              br(),
-              includeHTML("Competicao.html")
+              tabPanel(title = "Crescimento Geométrico",
+                       tabsetPanel(type = "tabs",
+                                   tabPanel(title = "Gráfico", sidebarLayout(
+                                     sidebarPanel(sliderInput("N0GeoIn", "N0",
+                                                              min = 1, max = 100, value = 5),
+                                                  numericInput("RGeoIn", "R",
+                                                               value = 1),
+                                                  sliderInput("tGeoIn", "t",
+                                                              min = 0, max = 100, value = 50),
+                                                  br(),
+                                                  
+                                                  h4(textOutput("geoOut"))
+                                     ),
+                                     mainPanel(plotOutput("geoGplot")
+                                               
+                                     )
+                                   )),
+                                   tabPanel(title = "Explicação do Modelo",
+                                            includeHTML("Textos Markdown e HTML/CrescimentoGeometrico_Explicação.html")),
+                                   tabPanel(title = "Exercícios",
+                                            includeHTML("Textos Markdown e HTML/CrescimentoGeometrico_Exercícios.html")))),
+              
+              
+              tabPanel(title = "Crescimento Exponencial",
+                       tabsetPanel(type = "tabs",
+                                   tabPanel(title = "Gráfico",
+                                            sidebarLayout(
+                                              sidebarPanel(sliderInput("N0ExpIn", "N0",
+                                                                       min = 1, max = 100, value = 1),
+                                                           numericInput("rExpIn", "r",
+                                                                        value = 0.1, step = 0.01),
+                                                           sliderInput("tExpIn", "t",
+                                                                       min = 0, max = 100, value = 50),
+                                                           h4(textOutput("expOut")), h4(textOutput("expDoublingTime")
+                                                           )),
+                                              mainPanel(plotOutput("expGPlot"))
+                                            )),
+                                   tabPanel(title = "Explicação do Modelo",
+                                            includeHTML("Textos Markdown e HTML/CrescimentoExponencial_Explicação.html")),
+                                   tabPanel(title = "Exercícios",
+                                            includeHTML("Textos Markdown e HTML/CrescimentoExponencial_Exercícios.html"))
+                                   )),
+              
+              
+              tabPanel(title = "Logístico",
+                       tabsetPanel(type = "tabs",
+                                   tabPanel(title = "Gráfico",
+                                            sidebarLayout(
+                                              sidebarPanel(sliderInput("N0LogIn", "N0",
+                                                                       min = 1, max = 100, value = 1),
+                                                           numericInput("rLogIn", "r",
+                                                                        min = -3, max = 3, value = 0.2, step = 0.01),
+                                                           sliderInput("tLogIn", "t",
+                                                                       min = 0, max = 100, value = 80),
+                                                           sliderInput("kLogIn", "K", min = 0, max = 100, value = 50),
+                                                           br(),
+                                                           h4(textOutput("logOut"))
+                                              ),
+                                              mainPanel(plotOutput("logGPlot"))
+                                            )),
+                                   tabPanel(title = "Explicação do Modelo",
+                                            includeHTML("Textos Markdown e HTML/CrescimentoLogistico_Explicação.html")),
+                                   tabPanel(title = "Exercícios",
+                                            includeHTML("Textos Markdown e HTML/CrescimentoLogistico_Exercícios.html")))),
+              
+              
+              tabPanel(title = "Competição",
+                       tabsetPanel(type = "tabs",
+                                   tabPanel(title = "Gráfico",
+                                            sidebarLayout(
+                                              sidebarPanel(numericInput("N01Comp", "N01",
+                                                                        min = 1, max = 3000, value = 300, step = 1),
+                                                           numericInput("N02Comp", "N02",
+                                                                        min = 1, max = 3000, value = 900, step = 1),
+                                                           numericInput("r1Comp", "r1",
+                                                                        min = -5, max = 5, value = 0.5, step = 0.01),
+                                                           numericInput("r2Comp", "r2",
+                                                                        min = -5, max = 5, value = 0.5, step = 0.01),
+                                                           numericInput("K1Comp", "K1", min = 1, max = 1000, value = 1000, step = 1),
+                                                           numericInput("K2Comp", "K2", min = 0, max = 1000, value = 1000, step = 1),
+                                                           numericInput("alphaComp", "alpha", min = 0, max = 100, value = 2, step = 0.005),
+                                                           numericInput("betaComp", "beta", min = 0, max = 100, value = 2, step = 0.005),
+                                                           sliderInput("tComp", "t", min = 1, max = 1000, value = 100),
+                                                           br(),
+                                                           h4(textOutput("compOut1")),
+                                                           h4(textOutput("compOut2"))
+                                                           
+                                              ),
+                                              mainPanel(plotOutput("compPlot"),
+                                                        br(),
+                                                        plotOutput("compIsoPlot"))
+                                            )),
+                                   tabPanel(title = "Explicação do Modelo",
+                                            includeHTML("Competicao.html")),
+                                   tabPanel(title = "Exemplos",
+                                            includeHTML("Competicao.html")),
+                                   tabPanel(title = "Exercícios",
+                                            includeHTML("Competicao.html"))
+                       )
+                       
               ),
-
-  )),
-
-  tabPanel(title = "Predação", sidebarLayout(
-    sidebarPanel(
-      numericInput("P0Pred", "População inicial de Predadores - P0",
-                   min = 0, max = 1000, value = 300, step = 1),
-      numericInput("V0Pred", "População inicial de Vítimas - V0",
-                   min = 0, max = 1000, value = 900, step = 1),
-      numericInput("rPred", "Taxa de cresc. intríns. da vítima - r)",
-                   min = -3, max = 3, value = 0.3, step = 0.05),
-      numericInput("cPred", "Eficência de captura do predador (c ou alpha)",
-                   min = 0, max = 3, value = 0.001, step = 0.001),
-      numericInput("aPred", "Eficência de conversão do predador (a ou beta)",
-                   min = 0, max = 3, value = 0.001, step = 0.001),
-      numericInput("mPred", "Taxa de mortalidade do predador (m ou q)",
-                   min = 0, max = 3, value = 0.6, step = 0.05),
-      numericInput("tPred", "t (de 0 a 1000)", 
-                   min = 0, max = 1000, value = 100),
-      br(),
-      h4(textOutput("predOut1")),
-      h4(textOutput("predOut2"))
-    ),
-    mainPanel(plotOutput("predPlot"),
-              br(),
-              plotOutput("predIsoPlot"),
-              br(),
-              includeHTML("Predacao.html"),
-              br()
-    )
+              
+              
+              tabPanel(title = "Predação", 
+                       tabsetPanel(type = "tabs",
+                                   tabPanel(title = "Gráfico", 
+                                            sidebarLayout(
+                                              sidebarPanel(
+                                                numericInput("P0Pred", "População inicial de Predadores - P0",
+                                                             min = 0, max = 1000, value = 300, step = 1),
+                                                numericInput("V0Pred", "População inicial de Vítimas - V0",
+                                                             min = 0, max = 1000, value = 900, step = 1),
+                                                numericInput("rPred", "Taxa de cresc. intríns. da vítima - r)",
+                                                             min = -3, max = 3, value = 0.3, step = 0.05),
+                                                numericInput("cPred", "Eficência de captura do predador (c ou alpha)",
+                                                             min = 0, max = 3, value = 0.001, step = 0.001),
+                                                numericInput("aPred", "Eficência de conversão do predador (a ou beta)",
+                                                             min = 0, max = 3, value = 0.001, step = 0.001),
+                                                numericInput("mPred", "Taxa de mortalidade do predador (m ou q)",
+                                                             min = 0, max = 3, value = 0.6, step = 0.05),
+                                                numericInput("tPred", "t (de 0 a 1000)", 
+                                                             min = 0, max = 1000, value = 100),
+                                                br(),
+                                                h4(textOutput("predOut1")),
+                                                h4(textOutput("predOut2"))
+                                              ),
+                                              mainPanel(plotOutput("predPlot"),
+                                                        br(),
+                                                        plotOutput("predIsoPlot")
+                                              )
+                                            )
+                                   ),
+                                   tabPanel(title = "Explicação do Modelo",
+                                            includeHTML("Predacao.html")),
+                                   tabPanel(title = "Exemplos",
+                                            includeHTML("Predacao.html")),
+                                   tabPanel(title = "Exercícios",
+                                            includeHTML("Predacao.html"))
+                       )
+              )
   )
-)
-)
-
 )
 
 
