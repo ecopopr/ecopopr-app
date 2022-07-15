@@ -107,11 +107,9 @@ ui <- fluidPage( #início do código da interface gráfica
                                                         plotOutput("compIsoPlot"))
                                             )),
                                    tabPanel(title = "Explicação do Modelo",
-                                            includeHTML("Competicao.html")),
-                                   tabPanel(title = "Exemplos",
-                                            includeHTML("Competicao.html")),
+                                            includeHTML("Textos Markdown e HTML/Competição_Explicação.html")),
                                    tabPanel(title = "Exercícios",
-                                            includeHTML("Competicao.html"))
+                                            includeHTML("Textos Markdown e HTML/Competição_Exercícios.html"))
                        )
                        
               ),
@@ -147,13 +145,13 @@ ui <- fluidPage( #início do código da interface gráfica
                                             )
                                    ),
                                    tabPanel(title = "Explicação do Modelo",
-                                            includeHTML("Predacao.html")),
-                                   tabPanel(title = "Exemplos",
-                                            includeHTML("Predacao.html")),
+                                            includeHTML("Textos Markdown e HTML/Predação_Explicação.html")),
                                    tabPanel(title = "Exercícios",
-                                            includeHTML("Predacao.html"))
+                                            includeHTML("Textos Markdown e HTML/Predação_Exercícios.html"))
                        )
-              )
+              ),
+              tabPanel(title = "Referências",
+                       includeHTML("Textos Markdown e HTML/Referencias.html"))
   )
 )
 
