@@ -1,0 +1,48 @@
+---
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+### Crescimento Exponencial - Exercícios
+
+**1** - Utilize os seguintes parâmetros no modelo de crescimento exponencial: 
+
+$$r = 0,1$$
+
+$$t = 20$$
+
+Agora altere para os seguintes valores de $N_0$ e anote o resultado de $N_t$ após $20$ unidades de tempo, seguindo o exemplo de $N_0=1$:
+
+| $N_0$   | $N_{t}=20$    |
+|--------------- | --------------- |
+| 1   | 7,39 |
+| 2   | |
+| 4   | |
+| 8   | |
+| 16  | |
+| 32  | |
+| 64  | |
+
+- O que você observa? Por quê?
+
+**2** - Agora utilize os seguintes valores:
+
+$$N0 = 1$$
+
+$$r = 0,1$$ 
+
+Compare o valor de Nt entre os valores de $t$ indicados:
+
+| $t$   | $N_t$    |
+|--------------- | --------------- |
+| 2   | 1.22 |
+| 4   |   |
+| 8   |   |
+| 16  |   |
+| 32  |   |
+
+- O que você repara de diferente em relação ao que ocorreria no crescimento geométrico, ao dobrar sucessivamente o valor do tempo?

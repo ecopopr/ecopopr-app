@@ -1,0 +1,70 @@
+---
+title: "Crescimento Geométrico"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Entendendo o modelo
+
+
+### Premissas:
+
+- Não há recursos limitantes para o crescimento da população
+- As taxas de natalidade e mortalidade não variam e consequentemente, a taxa discreta de crescimento ($R$) é constante
+- Todos os indivíduos podem se reproduzir com todos os outros
+- Todas as reproduções ocorrem em momentos específicos (discretos) do tempo (sejam dias, estações, anos etc) e ocorrem todas de uma vez a cada passo de tempo 
+
+
+### Equações do modelo
+
+$$N_{t+1} = N_{t}(1+R)$$
+$$N_t = N_{0} (λ)^t$$
+
+### Termos empregados
+
+- $B$ -> taxa de natalidade discreta per capita (a cada 1 indivíduo, quantos nascem a cada passo de tempo)
+- $D$ -> taxa de mortalidade discreta per capita (a cada 1 indivíduo, quantos morrem a cada passo de tempo)
+- $(B-D)$ = $R$ -> taxa de crescimento finita ou discreta
+
+
+## Exemplo
+
+
+A cada passo de tempo nasce $1$ indivíduo a cada indivíduo na população e morre $0,5$ indivíduo a cada indivíduo na população.
+Ou seja:
+
+- $B$ = $1$ e $D$ = $0,5$
+- $R$ = $0,5$ -> quantos indivíduos serão acrescidos à população por cada cada indivíduo já existente a cada passo de tempo
+
+Se temos 10 indivíduos, cada um deles gerará 0,5 indivíduo, considerando o que cada um gerará por reprodução ($B$) e descontando quantos morrerão per capita ($D$).
+
+
+No próximo passo de tempo, teremos a adição de $5$ indivíduos e o tamanho da população passará a ser $N = 15$.
+$R = 0,5$ significa que a população cresce $50%$ a cada passo e para obter esse valor precisamos multiplicar o $N$ por $1,5$.
+Esse novo valor ($1 + R$) pode ser multiplicado ao número de indivíduos para saber quantos existirão no próximo passo de tempo.
+$$N_t+1 = N_t (1+R)$$
+
+Chamamos $(1+R)$ de $λ$ (lambda) e temos que:
+
+$$N_{t+1}= N_t * λ$$
+
+Como as taxas de natalidade e mortalidade per capita ($B$ e $D$) permanecem constantes, $R$ (taxa de crescimento finita) também permanece.
+Então para cada passo no tempo, basta multiplicar a população por lambda ($1+R$) novamente.
+$$N_t = N_0 λ^t$$
+No nosso exemplo, para 3 passos de tempo, teríamos:
+
+$$N3 = 10 * 1,5 * 1,5 * 1,5 = 33,75$$
+<center>
+ou
+</center>
+
+$$N3 = 10 * 1,53 = 33,75$$
+
+
+#### Referências
+
+GOTELLI, N. J. **Ecologia**. 4. ed. Londrina: Editora Planta, 2007

@@ -1,0 +1,69 @@
+---
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Competição Interespecífica - Exercícios
+
+No modelo de Competição, utilize os parâmetros informados para visualizar os gráficos resultantes e responder às perguntas. O ponto preto na área do gráfico representa as condições iniciais. Utilize seus conhecimentos para verificar o comportamento dos gráficos em cada área (se necessário, utilize um rascunho para anotar os vetores de cada área).
+
+1. Utilize os parâmetros a seguir para o gráfico de competição:
+
+| Parâmetro   | Valor    |
+|--------------- | --------------- |
+| N1; N2   | 50   |
+| r1; r2   | 0,5   |
+| K1   | 100   |
+| K2   | 50   |
+| α  | 0,5   |
+| β   | 0,3  |
+| t   | 100   |
+
+
+a)Qual o resultado da competição? Uma das espécies exclui a outra? Se sim, qual?
+
+b)Qual o(s) pontos de equilíbrio do sistema? O equilíbrio neste(s) ponto(s) é estável ou instável?
+
+c)Altere os valores de r de ambas as espécies. O resultado da competição é alterado? O que acontece?
+
+d)Se retirássemos uma das espécies da competição, o que aconteceria com a outra?
+
+2) Altere apenas os seguintes valores:
+
+N1 = 110
+
+N2 = 10
+
+a)O que acontece com os gráficos?
+
+b)O resultado da competição é alterado? Por quê?
+
+c)Qual o(s) pontos de equilíbrio do sistema? O equilíbrio neste(s) ponto(s) é estável ou instável?
+
+3) Utilize os seguintes parâmetros:
+
+
+| Parâmetro   | Valor    |
+|--------------- | --------------- |
+| N1  | 300   |
+| N2   | 900   |
+| r1; r2   | 0,5   |
+| K1; K2   | 1000   |
+| α  | 2   |
+| β   | 2  |
+| t   | 100   |
+
+
+a) Qual o resultado da competição? Uma das espécies exclui a outra? Se sim, qual?
+b) Qual o(s) pontos de equilíbrio do sistema? O equilíbrio neste(s) ponto(s) é estável ou instável?
+
+4) Mude as abundâncias iniciais para:
+
+N1 = 500
+
+N2 = 400
+
+O resultado da competição é alterado? Por quê?
