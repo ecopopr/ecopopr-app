@@ -1,0 +1,27 @@
+---
+title: "Referências"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Textos
+
+GOTELLI, N. J. **Ecologia**. 4. ed. Londrina: Editora Planta, 2007
+
+RICKLEFS, R.; RELYEA, R. **A Economia da Natureza**. 7. ed. Rio de Janeiro: Guanabara Koogan, 2016.
+
+SANDERSON, G. **The Essence of Calculus**. Youtube, 28 abr. 2017. Disponível em: <https://www.youtube.com/watch?v=WUvTyaaNkzM>. Acesso em: 2 jul. 2022.
+
+SANDERSON, G. **The paradox of the derivative | Chapter 2, Essence of calculus**. Youtube, 29 abr. 2017. Disponível em: <https://www.youtube.com/watch?v=9vKqVkMQHKk>. Acesso em: 2 jul. 2022.
+
+SANDERSON, G. **What's so special about Euler's number e? | Chapter 5, Essence of calculus**. Youtube, 2 maio 2017. Disponível em: <https://www.youtube.com/watch?v=m2MIpDrF7Es>. Acesso em: 2 jul. 2022.
+
+STEVENS, M. H. **A Primer of Ecology with R**. New York: Springer, 2009.
+
+## Modelos
+
+STEVENS, M. H. **A Primer of Ecology with R**. New York: Springer, 2009.
+

@@ -1,0 +1,20 @@
+---
+output: html_document
+---
+### Exercícios
+
+
+**1)** Utilize os valores $R = 0.2$ e $t = 10$. Mude $N_0$ para os seguintes valores e anote, para cada um, o tamanho que a população alcança após $10$ passos de tempo:
+
+| $N_0$ | $N_{t=10}$ |
+|----|----|
+| $5$  |    |
+| $10$ |    |
+| $20$ |    |
+| $40$ |    |
+
+O que você observa? Por que isso acontece?
+
+
+
+**2)** Retorne para $N_0 = 5$. Ande de $t = 10$ para $t = 11$. Qual é a relação entre os valores de $N_t$ nesses dois passos de tempo?

@@ -1,0 +1,18 @@
+---
+title: "Crescimento Logístico"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Comece com os valores originais. Se necessário, atualize a página.
+
+1) Aumente o valor de r em 0,2. O que muda no gráfico?
+
+2) Mude N0 para um valor superior a K. O que acontece com a população?
+
+3) Retorne para N0 = 1 e mude t para um valor maior, como t = 100. Isso muda o tamanho que a população atinge?
+
+4) Altere K para 50 e N0 para 25 (metade do valor de K). O que acontece com a curva? Por que isso acontece?
