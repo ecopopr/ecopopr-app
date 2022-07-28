@@ -1,0 +1,57 @@
+---
+title: "Crescimento Logístico"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Entendendo o modelo
+
+### Premissas:
+
+- Há recursos finitos que são limitantes ao crescimento da população, o que impede seu crescimento exponencial.
+- A capacidade de suporte ($K$) é constante. Assumimos que a disponibilidade de recursos não se altera no ambiente.
+- Denso dependência linear – o quanto cada indivíduo adicional diminui a taxa de crescimento per capita da população é proporcional à porção ocupada da capacidade de suporte. Quanto mais indivíduos, menor a contribuição individual deles para o crescimento da população.
+
+Lembre-se que a taxa de crescimento do modelo exponencial é definida por: 
+
+$$dN/dt = rN$$
+Ou seja, em determinado ponto da curva, a variação instantânea ou inclinação (o quão rápido a população cresce ou decresce naquele momento) é definida por $rN$.
+
+## Capacidade de suporte
+
+Se a população possui um número máximo suportado pelo ambiente (capacidade de suporte – $K$), o crescimento populacional desacelera conforme a população se aproxima de $K$, de forma proporcional à ocupação.
+
+$$dN/dt = r N \left( \frac{K-N}{N} \right)$$
+
+<center>
+que é igual a:
+</center>
+
+
+$$dN/dt = r N \left( 1- \frac{N}{K} \right)$$
+$\frac{N}{K}$ é simplesmente a porção de “espaços” já ocupados por indivíduos na população. De K espaços (tamanho máximo da população), N já estão ocupados por indivíduos.
+
+Ao diminuirmos de $1$, temos a porção ainda não ocupada da população.
+
+Quanto menor for $\frac{N}{K}$ (ou seja, quando menor for N, pois K é constante), maior (mais próximo a $1$) será $1- \frac{N}{K}$, termo multiplicado por $rN$ (o quanto a população cresceria exponencialmente sem a limitação por recursos) e maior será a contribuição de cada um dos $N$ indivíduos para adicionar mais indivíduos à população.
+
+Assim, vemos que o crescimento logístico é o mesmo que o exponencial multiplicado por uma variável – a porção **desocupada** $1- \frac{N}{K}$ da capacidade de suporte.
+
+Em outras palavras: o crescimento logístico da população é o crescimento exponencial multiplicado pela proporção da capacidade de suporte ainda não preenchida. 
+
+
+### Exemplo: 
+
+Quando $20%$ da capacidade de suporte está preenchida, $rN$ é multiplicado por $0,8$ ($1 – 0,2$) e temos naquele ponto $80%$ do valor de $rN$ (o quanto a população cresceria naquele ponto no modelo exponencial).
+
+Se $N/K = 1$, ou seja, quando $N = K$, o tamanho da população atingiu a capacidade de suporte $1- \frac{N}{K}$.
+Assim, $rN$ é multiplicado por $0$, temos que $dN/dt = 0$ e a população não cresce.
+
+Assim, $rN$ é multiplicado por $0$ e temos que e a população não cresce.
+
+#### Referências
+
+GOTELLI, N. J. **Ecologia**. 4. ed. Londrina: Editora Planta, 2007
