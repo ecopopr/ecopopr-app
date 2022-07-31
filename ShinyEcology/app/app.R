@@ -5,9 +5,13 @@ library("shinythemes")
 
 # Must be saved in UTF-8 to show Portugese accents correctly.
 
-ui <- fluidPage( #início do código da interface gráfica 
-  theme = shinytheme("flatly"),
-  titlePanel("Ecologia Interativa"), # título do aplicativo
+ui <-  navbarPage(
+  #-- Theme e titulo ---#
+  theme = "cerulean",  # <--- To use a theme, uncomment this
+  "Ecologia Interativa",
+  
+  #------ Initial page ------#
+  tabPanel("Principal", # título do aplicativo
   h5("Nathália Hohl e Gabriel Santos"),
   h5("Publicado sob a licença Atribuição-NãoComercial-CompartilhaIgual 4.0 Internacional."),
   uiOutput("license"),
@@ -155,6 +159,11 @@ ui <- fluidPage( #início do código da interface gráfica
   )
 )
 
+),
+tabPanel("Sobre", 
+          includeHTML("Sobre_distill.html")
+         )
+)
 
 server <- function(input, output){
   
