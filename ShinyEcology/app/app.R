@@ -1,14 +1,15 @@
 library("shiny")
 library("ggplot2")
 library("deSolve")
-library("shinythemes")
+library("bslib")
+
 
 # Must be saved in UTF-8 to show Portugese accents correctly.
 
 ui <-  navbarPage(
   #-- Theme e titulo ---#
-  theme = "cerulean",  # <--- To use a theme, uncomment this
-  "Ecologia Interativa",
+  theme = bs_theme(bootswatch = "flatly", version = 4),
+  title = "Ecologia Interativa",
   
   #------ Initial page ------#
   tabPanel("Principal", # título do aplicativo
@@ -153,17 +154,16 @@ ui <-  navbarPage(
                                    tabPanel(title = "Exercícios",
                                             includeHTML("Textos Markdown e HTML/Predação_Exercícios.html"))
                        )
-              ),
-              tabPanel(title = "Referências",
-                       includeHTML("Textos Markdown e HTML/Referencias.html"))
+              )
   )
-)
+), #fim de Principal
 
-),
 tabPanel("Sobre", 
           includeHTML("Sobre_distill.html")
-         )
-)
+         ),
+tabPanel(title = "Referências",
+         includeHTML("Textos Markdown e HTML/Referencias.html"))
+) #fim de navbarPage
 
 server <- function(input, output){
   
