@@ -1,5 +1,5 @@
 ---
-title: "Ecologia interativa"
+title: "Ecopop Interativa"
 output:
   distill::distill_article:
     toc: true
@@ -20,9 +20,9 @@ fontsize: 14pt
 
 ## SOBRE
 
-O app **Ecologia interativa** [nome provisório] é uma tentativa de fornecer uma plataforma interativa como recurso didático adicional aos livros utilizados na disciplina de ecologia, mais especificamente em ecologia de populações. Através do app, os estudantes podem realizar simulações para explorar os mecanismos e resultados dos modelos populacionais, que muitas vezes parecem complexos e abstratos. Esperamos que ao simular diversos cenários possíveis, os estudantes possam ter uma experiência divertida com a matemática por trás desses modelos.
+O app **Ecopop Interativa** é uma tentativa de fornecer uma plataforma interativa como recurso didático adicional aos livros utilizados na disciplina de ecologia, mais especificamente em ecologia de populações. Através do app, os estudantes podem realizar simulações para explorar os mecanismos e resultados dos modelos populacionais, que muitas vezes parecem complexos e abstratos. Esperamos que ao simular diversos cenários possíveis, os estudantes possam ter uma experiência divertida com a matemática por trás desses modelos.
 
-**Ecologia interativa** é uma proposta desenvolvida por Nathalia Hohl e Gabriel Santos e foi desenvolvido utilizando R + Shiny. Assim como o [Software R](https://cran.r-project.org/), o app Ecologia interativa possui código aberto e colaborações são muito bem vindas. Por ser construído com base numa linguagem de programação tão frequentemente utilizada entre ecólogos, esperamos que o app possa aumentar suas funcionalidades rapidamente graças a um esforço coletivo e se tornar uma grande referência em termos de material didático no ensino de ecologia.
+**Ecopop Interativa** é uma proposta desenvolvida por Nathalia Hohl e Gabriel Santos e foi desenvolvido utilizando R + Shiny. Assim como o [Software R](https://cran.r-project.org/), o app Ecologia interativa possui código aberto e colaborações são muito bem vindas. Por ser construído com base numa linguagem de programação tão frequentemente utilizada entre ecólogos, esperamos que o app possa aumentar suas funcionalidades rapidamente graças a um esforço coletivo e se tornar uma grande referência em termos de material didático no ensino de ecologia.
 
 ## COMO CONTRIBUIR
 
@@ -41,3 +41,8 @@ Para contribuir com o aplicativo você pode enviar sua sugestão por [email](mai
 |                                  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 |----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ![](Gabriel.jpeg){width="100px"} | **Gabriel** atualmente é pesquisador vinculado ao Instituto Nacional da Mata Atlântica. Tem interesse em diversas linhas de pesquisa que envolvam o uso de estatística, teoria e o envolvimento da comunidade local, entre elas análise de viabilidade populacional em vida livre, evolução da história de vida dos organismos, proposta de manejo de espécies exóticas e ameaçadas e ciência cidadã. Você pode acompanhar mais sobre os projetos desenvolvidos através do [site](https://ecosantos.netlify.app/), [Lattes](http://lattes.cnpq.br/1714610835853424), ou mande um [email](mailto:ssantos.gabriel@gmail.com). |
+
+
+## LICENÇA
+
+Este aplicativo foi publicado sob a licença [Atribuição 4.0 Internacional (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.pt_BR) por Nathália S. H. Ferreira e Gabriel Santos. Entre em contato para contribuições e derivações.

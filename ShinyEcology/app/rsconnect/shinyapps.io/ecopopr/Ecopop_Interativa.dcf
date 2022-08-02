@@ -1,0 +1,13 @@
+name: Ecopop_Interativa
+title: Ecopop_Interativa
+username:
+account: ecopopr
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6725824
+bundleId: 6155557
+url: https://ecopopr.shinyapps.io/Ecopop_Interativa/
+when: 1659398665.08225
+lastSyncTime: 1659398665.08227
+asMultiple: FALSE
+asStatic: FALSE
