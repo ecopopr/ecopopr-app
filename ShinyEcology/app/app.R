@@ -9,12 +9,12 @@ library("bslib")
 ui <-  navbarPage(
   #-- Theme e titulo ---#
   theme = bs_theme(bootswatch = "flatly", version = 4),
-  title = "Ecologia Interativa",
+  title = "Ecopop Interativa",
   
   #------ Initial page ------#
   tabPanel("Principal", # título do aplicativo
   h5("Nathália Hohl e Gabriel Santos"),
-  h5("Publicado sob a licença Atribuição-NãoComercial-CompartilhaIgual 4.0 Internacional."),
+  h5("Publicado sob a licençaAtribuição-NãoComercial-CompartilhaIgual 4.0 Internacional (CC BY-NC-SA 4.0)."),
   uiOutput("license"),
   
   br(),
